@@ -24,3 +24,4 @@ href="http://${bf.config.blog.disqus.name}.disqus.com/latest.rss">Comments</a>.
 //]]>
 </script>
 % endif
+</div>

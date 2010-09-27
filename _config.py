@@ -37,7 +37,7 @@ blog.name = "Magoo"
 
 ## blog_description -- A short one line description of the blog
 # used in the RSS/Atom feeds.
-blog.description = "Your Blog's short description"
+blog.description = "affiliated with the society of blog bloggables"
 
 ## blog_timezone -- the timezone that you normally write your blog posts from
 blog.timezone = "US/Eastern"

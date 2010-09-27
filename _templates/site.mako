@@ -4,12 +4,13 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="/css/global.css" type="text/css"  charset="utf-8" />
     ${self.head()}
   </head>
   <body>
-    <div id="content">
+    <div id="content_centered">
       ${self.header()}
-      <div id="main_block">
+      <div id="main_content">
         <div id="prose_block">
           ${next.body()}
         </div><!-- End Prose Block -->
