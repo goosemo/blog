@@ -50,6 +50,8 @@ tweets.username = "morganiangoose"
 tweets.count = 3
 tweets.enable_links = 'true'
 tweets.ignore_replies = 'false'
+tweets.template = ('<li><div class="item">%text% <a href="http://twitter.c'
+         'om/%user_screen_name%/statuses/%id%/">%time%</a></div></li><br/>')
 
 ######################################################################
 # Intermediate Settings

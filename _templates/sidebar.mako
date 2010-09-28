@@ -37,7 +37,7 @@
         enableLinks: ${bf.config.tweets.eanble_links}, 
         ignoreReplies: ${bf.config.tweets.ignore_replies}, 
         clearContents: true,
-        template: '<li><div class="item">%text% <a href="http://twitter.com/%user_screen_name%/statuses/%id%/">%time%</a></div></li><br/>'
+        template: '${bf.config.tweets.template}',
     });
     </script>
     <div id="tweet">
