@@ -47,6 +47,9 @@ blog.timezone = "US/Eastern"
 controllers.tweets.enabled = True
 tweets = controllers.tweets
 tweets.username = "morganiangoose"
+tweets.count = 3
+tweets.enable_links = 'true'
+tweets.ignore_replies = 'false'
 
 ######################################################################
 # Intermediate Settings

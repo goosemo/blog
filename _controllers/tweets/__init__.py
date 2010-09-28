@@ -10,12 +10,6 @@ config = {
         }
 
 def run():
-    import twitter 
-    api = twitter.Api()
-
     tweets = bf.config.controllers.tweets
-
     tweets.logger = logging.getLogger(config['name'])
 
-    tweets.feed = [s.text for s in api.GetUserTimeline(
-        config['username'])]

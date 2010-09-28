@@ -33,9 +33,9 @@
     <script type="text/javascript" charset="utf-8">
     getTwitters('tweet', { 
         id: '${bf.config.tweets.username}', 
-        count: 5, 
-        enableLinks: true, 
-        ignoreReplies: false, 
+        count: ${bf.config.tweets.count}, 
+        enableLinks: ${bf.config.tweets.eanble_links}, 
+        ignoreReplies: ${bf.config.tweets.ignore_replies}, 
         clearContents: true,
         template: '<li><div class="item">%text% <a href="http://twitter.com/%user_screen_name%/statuses/%id%/">%time%</a></div></li><br/>'
     });
