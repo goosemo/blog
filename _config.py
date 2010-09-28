@@ -43,6 +43,11 @@ blog.description = "affiliated with the society of blog bloggables"
 blog.timezone = "US/Eastern"
 
 
+### Twitter Settings ###
+controllers.tweets.enabled = True
+tweets = controllers.tweets
+tweets.username = "morganiangoose"
+
 ######################################################################
 # Intermediate Settings
 ######################################################################

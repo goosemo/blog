@@ -27,7 +27,21 @@
 <br />
 
 <div class="sidebar_item">
-<h3>Twitter</h3>
+    <h3>Twitter</h3>
+    <script src="http://twitterjs.googlecode.com/svn/trunk/src/twitter.min.js" type="text/javascript">
+    </script>
+    <script type="text/javascript" charset="utf-8">
+    getTwitters('tweet', { 
+        id: '${bf.config.tweets.username}', 
+        count: 5, 
+        enableLinks: true, 
+        ignoreReplies: false, 
+        clearContents: true,
+        template: '<li><div class="item">%text% <a href="http://twitter.com/%user_screen_name%/statuses/%id%/">%time%</a></div></li><br/>'
+    });
+    </script>
+    <div id="tweet">
+    </div>
 </div>
 <br />
 

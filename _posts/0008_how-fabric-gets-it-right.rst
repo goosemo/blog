@@ -6,7 +6,11 @@ permalink: http://morgangoose.com/blog/2010/02/how-fabric-gets-it-right/
 tags: python, fabric, pyohio, rst
 title: How fabric gets it right
 ---
-I like fabric_. A lot. Its a easy to use tool that continually makes my life simpler, and my projects smarter and more automated. Not much out there can really say that. At least nothing I use daily, without noticing, and dependably.
+
+I like fabric_. A lot.
+----------------------
+
+Its a easy to use tool that continually makes my life simpler, and my projects smarter and more automated. Not much out there can really say that. At least nothing I use daily, without noticing, and dependably.
 
 I used to use vellum, and that did what I needed. But fabric being under active development, and getting new features each version it seems is a huge plus. That and it does the network stuff for you, along with the nitty gritty.
 
@@ -18,7 +22,7 @@ In starting to use fabric you'll notice the basic idea is that you'd make a fabf
 
 Below in this example, two targets are made, pack and deploy. The pack target will just makes a tarball, using the local function fabric provides. The deploy target calls pack to make this tarball, then using the put function will place the tarball into the tmp directory, then change into the web dir provided, and extract the archive. It knows automaticly to do this to both hosts I provided, and since I am using an ssh key does all this trickery autonomously.
 
-**fabfile.py**
+:fabfile.py:  
 
 .. code-block:: python
 
@@ -38,15 +42,14 @@ Below in this example, two targets are made, pack and deploy. The pack target wi
             run('tar xzf /tmp/project_foo.tgz')
 
 
-Fabric can do a lot more than just this, and its docs_ have a lot of detail, and explain most everything well. 
+Fabric can do a lot more than just deploy
+-----------------------------------------
 
-A last example of some a cool fabric config would be the one I use to publish my presentations to this site.
+It's docs_ have a lot of detail, and explain most everything well. A last example of some a cool fabric config would be the one I use to publish my presentations to this site.
 
-**fabfile.py**
+:fabfile.py:  
 
 .. code-block:: python
-
-    #!/usr/bin/env python
 
     from fabric.api import *
 
@@ -110,8 +113,11 @@ This has some more complicated bits, where it uses the role decorator to specify
 
 It also takes advantage of an awesome feature I didn't know fabric had where, one can send arguments to a fabric target. So the project parameter in the targets here can be, and is, supplied via the command line. 
 
-For example, I used this to deploy the updates to my most recent presentation:
 
+For example
+-----------
+
+I used this to deploy the updates to my most recent presentation:
 
 .. code-block:: bash
 
