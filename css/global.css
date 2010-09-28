@@ -167,16 +167,16 @@ div#masthead a#getstarted:hover{
 
 /* @group Columns */
 
-div#column_left{
+div#column_right{
 	margin-right: 36px;
-	float: left;
-	width: 240px;
+	float: right;
+	width: 280px;
 	height: 100%;
 }
 
 div#main_content{
-	width: 614px;
-	float: right;
+	width: 574px;
+	float: left;
 }
 
 /* @end */
@@ -185,32 +185,32 @@ div#main_content{
 
 /* @group Sidebar Item */
 
-div#column_left div.sidebar_item{
+div#column_right div.sidebar_item{
 	padding: 6px;
 	background-color: #fff;
 }
 
-div#column_left div.sidebar_item h3{
+div#column_right div.sidebar_item h3{
 	font-size: 16px;
 	margin: 0px 0px 4px 0px;
 }
 
-div#column_left div.sidebar_item p{
+div#column_right div.sidebar_item p{
 	font-size: 11px;
-	line-height: 14px;
+	/*line-height: 14px;*/
 }
 
 /* @end */
 
-div#column_left ul.sidebar_menu{
+div#column_right ul.sidebar_menu{
 	margin-bottom: 36px;
 }
 
-div#column_left ul.sidebar_menu li{
+div#column_right ul.sidebar_menu li{
 	display: block;
 }
 
-div#column_left ul.sidebar_menu li div.color{
+div#column_right ul.sidebar_menu li div.color{
 	width: 3px;
 	float: left;
 	height: 100%;
@@ -218,24 +218,24 @@ div#column_left ul.sidebar_menu li div.color{
 	display: inline;
 }
 
-div#column_left ul.sidebar_menu li div.item a{
+div#column_right ul.sidebar_menu li div.item a{
 	text-decoration: none;
 	background-color: #ccc;
 	font-size: 12px;
 	color: #333;
 	display: block;
 	padding: 7px 0px 9px 16px;
-	width: 224px;
+	width: 280px;
 }
 
-div#column_left ul.sidebar_menu li div.item a:hover{
+div#column_right ul.sidebar_menu li div.item a:hover{
 	background-color: #aaa;
 	color: #fff
 }
 
-div#column_left ul.sidebar_menu li div.item{
+div#column_right ul.sidebar_menu li div.item{
 	background-color: #ccc;
-    height: 28px;
+    /*height: 28px;*/
 	width: 100%;
 	margin-bottom: 1px;
 	zoom: 1 !important;
@@ -260,11 +260,13 @@ div#main_content blockquote{
 	font-weight: normal;
 }
 
-div#main_content pre.code{
+div#main_content pre,pre.code{
+    padding: 5px; 
 	border-left: 3px solid #666;
 	background-color: #333;
 	padding: 8px;
 	color: #fff;
+    text-align: left;
 	font-family: "Courier New", Courier, mono;
 	margin-bottom: 10px;
 }
