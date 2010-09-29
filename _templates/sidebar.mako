@@ -34,7 +34,7 @@
     getTwitters('tweet', { 
         id: '${bf.config.tweets.username}', 
         count: ${bf.config.tweets.count}, 
-        enableLinks: ${bf.config.tweets.eanble_links}, 
+        enableLinks: ${bf.config.tweets.enable_links}, 
         ignoreReplies: ${bf.config.tweets.ignore_replies}, 
         clearContents: true,
         template: '${bf.config.tweets.template}',

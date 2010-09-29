@@ -56,6 +56,16 @@ tweets.template = ('<li><div class="item">%text% <a href="http://twitter.c'
 ######################################################################
 # Intermediate Settings
 ######################################################################
+#### Feedburner settings ####
+controllers.feedburner.enabled = True
+feedburner = controllers.feedburner
+feedburner.url = "http://feeds.feedburner.com/morgangoose/FCyR"
+
+#### Google Analytics ####
+controllers.google_analytics.enabled = True
+google_analytics = controllers.google_analytics
+google_analytics.id = "UA-9907711-1"
+
 #### Disqus.com comment integration ####
 blog.disqus.enabled = True
 blog.disqus.name    = "magoo"
@@ -106,6 +116,7 @@ def post_build():
     #Do whatever you want after the _site is built
     from commands import getoutput
     print getoutput("scp -r _site/blog h4941w83@morgangoose.com:/var/www/html/")
+    print getoutput("scp -r _site/css h4941w83@morgangoose.com:/var/www/html/")
 #    build_docs()
 
 

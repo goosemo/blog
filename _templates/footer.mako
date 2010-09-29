@@ -1,10 +1,15 @@
 <p id="credits">
 Powered by <a href="http://www.blogofile.com">Blogofile</a>.<br/>
 <br/>
+
+% if bf.config.feedburner.enabled:
+RSS feeds for <a href="${bf.config.feedburner.url}">Entries</a>
+% else:
 RSS feeds for <a href="${bf.util.site_path_helper(bf.config.blog.path,'feed')}">Entries</a>
+% endif
+
 % if bf.config.blog.disqus.enabled:
- and <a
-href="http://${bf.config.blog.disqus.name}.disqus.com/latest.rss">Comments</a>.
+ and <a href="http://${bf.config.blog.disqus.name}.disqus.com/latest.rss">Comments</a>.
 % endif
 <br>
 </p>
@@ -23,5 +28,9 @@ href="http://${bf.config.blog.disqus.name}.disqus.com/latest.rss">Comments</a>.
 	})();
 //]]>
 </script>
+% endif
+
+% if bf.config.google_analytics.enabled:
+    <%include file="google_analytics.mako"/>
 % endif
 </div>

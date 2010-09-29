@@ -45,7 +45,7 @@ configurable by the **_config.py** file. I made it kinda simple, but a bit
 overkilled with the folder and an __init__.py, but I was aiming for it to be
 more work. 
 
-: _controllers/tweets/__init__.py:
+:/_controllers/tweets/__init__.py:
 
 .. code-block:: python
 
@@ -68,7 +68,7 @@ After making it a controller then we're able to put in config vars and set them
 as we want. Which makes it nice for me later i want to change some things,
 since all configs are in this one file.
 
-: _configure.py:
+:/_configure.py:
 
 .. code-block:: python
 
@@ -86,7 +86,7 @@ since all configs are in this one file.
 I then threw this, which is pretty much directly from remy's directions_ with
 mako var, into my sidebar template. 
 
-:sidebar.mako:
+:/_templates/sidebar.mako:
 
 .. code-block:: html
 
@@ -98,7 +98,7 @@ mako var, into my sidebar template.
             getTwitters('tweet', { 
                 id: '${bf.config.tweets.username}', 
                 count: ${bf.config.tweets.count}, 
-                enableLinks: ${bf.config.tweets.eanble_links}, 
+                enableLinks: ${bf.config.tweets.enable_links}, 
                 ignoreReplies: ${bf.config.tweets.ignore_replies}, 
                 clearContents: true,
                 template: '${bf.config.tweets.template}',

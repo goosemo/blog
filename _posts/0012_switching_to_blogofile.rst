@@ -96,7 +96,8 @@ hilighting control that I wanted.
             # take an arbitrary option if more than one is given
             formatter = self.options and VARIANTS[self.options.keys()[0]] or DEFAULT
 
-            print >>open('css/pygments_fruity.css', 'w'), formatter.get_style_defs('.highlight')
+            print >>open('css/pygments_fruity.css', 'w'), formatter.get_style_defs(
+                    '.highlight')
             parsed = highlight(u'\n'.join(self.content), lexer, formatter)
             return [nodes.raw('', parsed, format='html')]
     
