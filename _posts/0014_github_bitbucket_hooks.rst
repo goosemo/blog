@@ -6,9 +6,9 @@ date: 2010/09/29 17:40:10
 I use hg but like github
 ------------------------
 
-I also dislike unevenness I'd recently read about the hg-git_ plugin and read 
-about a setup_ that uses the paths definitions for hg_ to make simple names 
-to push to, and decided to combine them all together. I ended up with a 
+I also dislike unevenness. Having recently read about the hg-git_ plugin and 
+read about a setup_ that uses the paths definitions for hg_ to make simple 
+names to push to, and decided to combine them all together. I ended up with a
 ~/.hgrc that I had this:
 
 .. _hg-git: http://hg-git.github.com/

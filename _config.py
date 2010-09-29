@@ -43,8 +43,8 @@ blog.description = "affiliated with the society of blog bloggables"
 blog.timezone = "US/Eastern"
 
 ## extra blog settings ##
-blog.latest_post_count = 6
-blog.posts_on_front_page = 1
+blog.latest_post_count = 8
+blog.posts_per_page = 2
 
 ### Twitter Settings ###
 controllers.tweets.enabled = True
