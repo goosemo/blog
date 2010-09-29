@@ -1,7 +1,7 @@
 <div class="sidebar_item">
 <h3>Latest Posts</h3>
 <ul class="sidebar_menu">
-% for post in bf.config.blog.posts[:5]:
+% for post in bf.config.blog.posts[:bf.config.blog.latest_post_count]:
     <li>
         <div class="item">
             <a href="${post.path}">${post.title}</a>

@@ -42,6 +42,9 @@ blog.description = "affiliated with the society of blog bloggables"
 ## blog_timezone -- the timezone that you normally write your blog posts from
 blog.timezone = "US/Eastern"
 
+## extra blog settings ##
+blog.latest_post_count = 6
+blog.posts_on_front_page = 1
 
 ### Twitter Settings ###
 controllers.tweets.enabled = True
@@ -117,7 +120,6 @@ def post_build():
     from commands import getoutput
     print getoutput("scp -r _site/blog h4941w83@morgangoose.com:/var/www/html/")
     print getoutput("scp -r _site/css h4941w83@morgangoose.com:/var/www/html/")
-#    build_docs()
 
 
 
