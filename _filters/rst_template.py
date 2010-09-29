@@ -9,8 +9,8 @@ DEFAULT = HtmlFormatter(noclasses=INLINESTYLES, style=STYLE)
 
 # Add name -> formatter pairs for every variant you want to use
 VARIANTS = {
-            # 'linenos': HtmlFormatter(noclasses=INLINESTYLES, linenos=True),
-            }
+    'linenos': HtmlFormatter(noclasses=INLINESTYLES, linenos=False),
+    }
 
 
 from docutils import nodes
@@ -40,8 +40,8 @@ class Pygments(Directive):
         # take an arbitrary option if more than one is given
         formatter = self.options and VARIANTS[self.options.keys()[0]] or DEFAULT
 
-        print >>open('css/pygments_fruity.css', 'w'), formatter.get_style_defs(
-                '.highlight')
+   #     print >>open('css/pygments_fruity.css', 'w'), formatter.get_style_defs(
+   #             '.highlight')
         parsed = highlight(u'\n'.join(self.content), lexer, formatter)
         return [nodes.raw('', parsed, format='html')]
 

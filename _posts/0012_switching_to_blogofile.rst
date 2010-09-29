@@ -65,8 +65,8 @@ hilighting control that I wanted.
 
     # Add name -> formatter pairs for every variant you want to use
     VARIANTS = {
-                # 'linenos': HtmlFormatter(noclasses=INLINESTYLES, linenos=True),
-                }
+            'linenos': HtmlFormatter(noclasses=INLINESTYLES, linenos=False),
+        }   
 
 
     from docutils import nodes
