@@ -9,7 +9,7 @@ Presentations are hard
 ----------------------
 
 Not even just giving them, but the process of taking an idea and putting it
-down in a consice and clear manner, that will be simple to show and distribute.
+down in a concise and clear manner, that will be simple to show and distribute.
 
 I am not going to make a claim that I am good at giving or writing up
 presentations, but I do think I have a pretty slick setup going for making them
@@ -44,7 +44,7 @@ I write a presentation in rst just like I would write any other document in
 rst. The goal I had was to write once, and have that document change into other
 formats without an issue. I do leverage a few classes and directives that
 aren't in the normal rst toolbox, to get my presentations just so. But these 
-aren't out of line, and after a tweak or two in my pipline don't break the
+aren't out of line, and after a tweak or two in my pipeline don't break the
 other formats I build to.
 
 s5
@@ -52,15 +52,15 @@ s5
 
     S5 is a slide show format based entirely on XHTML, CSS, and JavaScript.
 
-And rst2s5 takes a reStTructuredText document and complies it into the
-cooresponing s5 representation. Giving back a plain html page with some
-javascript magic that is simple to post and host.
+And rst2s5 takes a reStructuredText document and complies it into the
+corresponding s5 representation. Giving back a plain html page with some
+JavaScript magic that is simple to post and host.
 
-No need for server side scripting, or fancy apache/lighttpd/nginx setups or any
+No need for server side scripting, or fancy Apache/lighttpd/nginx setups or any
 need for proxies or their kin. So using s5_ alone will give me the goal of
 simple to show, since I can post a presentation and have accesses to it
 anywhere there is internet and a browser. I can even keep a copy on a
-thumbdrive in case the internet dies, and browse the slides locally.
+thumb drive in case the internet dies, and browse the slides locally.
 
 .. _s5: http://meyerweb.com/eric/tools/s5/
 
@@ -68,11 +68,11 @@ thumbdrive in case the internet dies, and browse the slides locally.
 reST with s5
 ------------
 
-To meet the last part of my goal, I have to have a simple distrobution medium.
+To meet the last part of my goal, I have to have a simple distribution medium.
 For a presentation that is a pdf. It's akin to a paper, even though it is much
 more broken down and split up into slides. Leveraging the *handout* class that
 the s5 and pdf converters from rst_ know, I am able to have parts of the
-presentation invisiable in slide form, and show up only when the presentation
+presentation invisible in slide form, and show up only when the presentation
 is expanded, or complied into a pdf.
 
 :eg:
@@ -117,10 +117,10 @@ into issues here because rst2pdf and rst2s5 had different ideas on what these
 should be named and neither really was highlighting the code. After searching a
 bit I found that pygments, a code highlighter in python, already had some
 docutils hooks that they `mention on their site 
-<http://pygments.org/docs/rstdirective/>`. 
+<http://pygments.org/docs/rstdirective/>`_.
 
-Using that as a stepping stone I added in code, code-block, and sourcecode,
-directvies to use pygments for the code they contained. In my presentations
+Using that as a stepping stone I added in code, code-block, and source code,
+directives to use pygments for the code they contained. In my presentations
 though I made sure to only use code-block because this is the directive that
 rst2pdf is expecting when it goes to format the document.
 

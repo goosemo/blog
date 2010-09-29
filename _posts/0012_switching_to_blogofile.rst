@@ -48,7 +48,7 @@ now retrofit into this project.
 
 The simple blog template had some helpers, but I had to pull the
 rst_template.py filter from the blogofile.com template and edit it to give me the
-hilighting control that I wanted. 
+highlighting control that I wanted. 
 
 :rst_template.py changes:
 

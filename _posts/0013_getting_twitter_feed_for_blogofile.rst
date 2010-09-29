@@ -15,7 +15,7 @@ Fails
 
 I though I might make a python api call and then pipe that into my sidebar.
 This worked. But it sucked because I'd have to rebuild the page every tweet. I
-don't mind static content for my posts and navigation and the like. Thats just
+don't mind static content for my posts and navigation and the like. That's just
 good caching I feel. 
 
 Tweets though are a constantly, or would be for anyone else but me, updating
@@ -27,15 +27,15 @@ In comes the JavaScript
 So in looking for simple things to give me a twitter feed I found Remy Sharp's
 site and his directions_ on how to put a javascript based feed into a site.
 
-It was simple as could be, and I had a base, but hardcoded feed up an running
+It was simple as could be, and I had a base, but hard coded feed up an running
 in short order.
 
 
 Making it better for blogofile users
 ------------------------------------
 
-Part of open souce is giving back. Something I really want to do more of, and I
-feel am getting into the swing of it a bit more. But thats whatever, I found
+Part of open source is giving back. Something I really want to do more of, and I
+feel am getting into the swing of it a bit more. But that's whatever, I found
 the useful and perfect plugin, and got it working in blogofile_ without much
 trouble.
 
