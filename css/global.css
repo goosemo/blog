@@ -82,23 +82,23 @@ div#header ul#header_menu li{
 	display: inline;
 }
 	
-	ul#header_menu li a{
-		text-decoration: underline;
-		padding: 6px 8px 6px 8px;
-		color: #333;
-	}
-	
-    ul#header_menu li a:hover{
-        color:#fff;
-        text-decoration: none;
-        background-color: #0099ff;
-    }
-    
-    ul#header_menu li a.selected{
-        color:#fff;
-        text-decoration: none;
-        background-color: #0099ff;
-    }
+ul#header_menu li a{
+    text-decoration: underline;
+    padding: 6px 8px 6px 8px;
+    color: #333;
+}
+
+ul#header_menu li a:hover{
+    color:#fff;
+    text-decoration: none;
+    background-color: #0099ff;
+}
+   
+ul#header_menu li a.selected{
+    color:#fff;
+    text-decoration: none;
+    background-color: #0099ff;
+}
 
 /* @end */
 
@@ -168,9 +168,9 @@ div#masthead a#getstarted:hover{
 /* @group Columns */
 
 div#column_right{
-	margin-right: 36px;
+	margin-right: 26px;
 	float: right;
-	width: 280px;
+	width: 270px;
 	height: 100%;
 }
 

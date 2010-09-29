@@ -1,7 +1,11 @@
+<%
+start = bf.config.blog.posts_per_page
+end = start + bf.config.blog.latest_post_count
+%>
 <div class="sidebar_item">
-<h3>Latest Posts</h3>
+<h3>Latest ${end-start} Posts<h3> <h4>(sans these ${start})</h4>
 <ul class="sidebar_menu">
-% for post in bf.config.blog.posts[:bf.config.blog.latest_post_count]:
+% for post in bf.config.blog.posts[start:end]:
     <li>
         <div class="item">
             <a href="${post.path}">${post.title}</a>
