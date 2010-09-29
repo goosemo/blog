@@ -117,9 +117,7 @@ def pre_build():
 
 def post_build():
     #Do whatever you want after the _site is built
-    from commands import getoutput
-    print getoutput("scp -r _site/blog h4941w83@morgangoose.com:/var/www/html/")
-    print getoutput("scp -r _site/css h4941w83@morgangoose.com:/var/www/html/")
+    pass
 
 
 

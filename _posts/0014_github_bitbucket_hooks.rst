@@ -3,9 +3,13 @@ title: Github and Bitbucket hooks
 date: 2010/09/29 17:40:10
 ---
 
-I'd recently read about the hg-git_ plugin and read about a setup_ that uses
-the paths definitions for hg_ to make simple names to push to, and decided to 
-combine them all together. I ended up with a ~/.hgrc that I had this:
+I use hg but like github
+------------------------
+
+I also dislike unevenness I'd recently read about the hg-git_ plugin and read 
+about a setup_ that uses the paths definitions for hg_ to make simple names 
+to push to, and decided to combine them all together. I ended up with a 
+~/.hgrc that I had this:
 
 .. _hg-git: http://hg-git.github.com/
 .. _setup: http://hgtip.com/tips/advanced/2009-11-09-create-a-git-mirror/
@@ -26,10 +30,13 @@ And then in the repo's .hg/hgrc I'd add something like this:
     github = git+ssh://git@github.com:goosemo/hooks.git
     bitbucket = ssh://hg@bitbucket.org/morgan_goose/hooks
 
-That worked well, but then I had to remember to push to both, and that was
-annoying. Then I dug into hooks_ and found that I could easily make a shell
-script to push to both for me. What I ended up with was a bash script that
-would determine which path I had pushes to, and then push to the other:
+That worked well
+----------------
+
+But I had to remember to push to both, and that was annoying. Then I dug into 
+hooks_ and found that I could easily make a shell script to push to both for 
+me. What I ended up with was a bash script that would determine which path I 
+had pushes to, and then push to the other:
 
 .. _hooks: http://www.selenic.com/mercurial/hgrc.5.html#hooks
 
@@ -62,6 +69,9 @@ caught in an infinite loop. After that I added this line into my ~/.hgrc
     [hooks]
     post-push = $HOME/workspace/hooks/github.sh
 
+
+Success
+-------
 
 Now regardless of where I push the other will get the update:
 
