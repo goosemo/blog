@@ -203,7 +203,7 @@ div#column_right div.sidebar_item p{
 /* @end */
 
 div#column_right ul.sidebar_menu{
-	margin-bottom: 36px;
+	margin-bottom: 16px;
 }
 
 div#column_right ul.sidebar_menu li{
@@ -224,8 +224,8 @@ div#column_right ul.sidebar_menu li div.item a{
 	font-size: 12px;
 	color: #333;
 	display: block;
-	padding: 7px 0px 9px 16px;
-	width: 280px;
+	padding: 7px 0px 9px 6px;
+	width: 270px;
 }
 
 div#column_right ul.sidebar_menu li div.item a:hover{
@@ -323,6 +323,20 @@ div#footer div.footer_content a{
 	color: #666;
 }
 
+.align_right {
+    align: right;
+}
 
+.align_left {
+    align: left;
+}
+
+.float_right {
+    float: right;
+}
+
+.float_left {
+    float: left;
+}
 
 /* @end */
