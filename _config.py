@@ -82,6 +82,16 @@ menu = {
         'projects': '/projects',
         'presentations': '/p',
         }
+
+#### links ####
+links = (
+        ('Alfred', 'Smart friend of mine', 
+            'http://www.alfredrossi.com/'),
+
+        ('Fabric', 'SSH made awesome by wrapping in Python',
+            'http://docs.fabfile.org'),
+    )
+
 #### Disqus.com comment integration ####
 blog.disqus.enabled = True
 blog.disqus.name    = "magoo"

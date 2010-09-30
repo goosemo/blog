@@ -55,6 +55,12 @@ end = start + bf.config.blog.latest_post_count
 
 <div class="sidebar_item">
 <h3>Links</h3>
+<ul>
+% for name, desc, url in bf.config.links:
+    <li><a href="${url}" title="${name}">${name}</a> - ${desc}</li>
+    <br/>
+% endfor 
+</ul>
 </div>
 <br />
 
