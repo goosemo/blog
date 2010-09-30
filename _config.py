@@ -74,6 +74,12 @@ controllers.github.enabled = True
 github = controllers.github
 github.user = "goosemo"
 
+
+#### menu ####
+menu = {
+        'home': '/blog',
+        'projects': '/projects',
+        }
 #### Disqus.com comment integration ####
 blog.disqus.enabled = True
 blog.disqus.name    = "magoo"

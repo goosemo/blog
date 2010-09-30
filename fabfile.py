@@ -1,5 +1,8 @@
 from fabric.api import *
 
+def package():
+    with cd("_site/"):
+        local("tar zcvf ../blog.tgz blog css projects")
 
 def new_post(post_name):
     post_template = """
@@ -19,6 +22,9 @@ def publish(post_name):
 @hosts('h4941w83@morgangoose.com')
 def build():
     local("blogofile build")
-    local("scp -r _site/{blog,css} %s:/var/www/html/" % env.host_string)
+    package()
+    put("blog.tgz", "var/www/html/")
+    with cd("var/www/html/"):
+        run("tar zxvf blog.tgz")
 
 
