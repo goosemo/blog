@@ -1,7 +1,7 @@
 ---
 title: Github project list
 date: 2010/09/29 22:24:00
-categories: Programming, Verson Control, Website
+categories: Programming, Version Control, Website
 tags: git, python, blogofile
 ---
 
