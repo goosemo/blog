@@ -5,18 +5,18 @@
 body{
 	background-color: #efefef;
 /*	font-family: "Lucida Grande", Lucida, Verdana, sans-serif; */
-	font-size: 12px;
+	font-size: 1.0em;
 	height: 100%;
 }
 
 h1{
 /*	font-family: "Lucida Grande", Lucida, Verdana, sans-serif; */
-	font-size: 22px;
+	font-size: 1.625em;
     margin-bottom: 10px;
 }
 
 h1.blog_post_title {
-	font-size: 26px;
+	font-size: 1.875em;
     margin-bottom: 10px;
 }
 
@@ -39,7 +39,7 @@ pre.padded{
 
 p{
 	line-height: 20px;
-	font-size: 12px;
+	font-size: 1.0em;
 }
 
 p.lightened{
@@ -209,7 +209,7 @@ div#column_right div.sidebar_item h3{
 }
 
 div#column_right div.sidebar_item p{
-	font-size: 12px;
+	font-size: 1.0em;
 	/*line-height: 14px;*/
 }
 
@@ -234,7 +234,7 @@ div#column_right ul.sidebar_menu li div.color{
 div#column_right ul.sidebar_menu li div.item a{
 	text-decoration: none;
 	background-color: #ccc;
-	font-size: 12px;
+	font-size: 1.0em;
 	color: #333;
 	display: block;
 	padding: 7px 0px 9px 6px;
@@ -269,7 +269,7 @@ div#main_content blockquote{
 	border-left: 3px solid #1d7872;
 	text-indent: 0px;
 	font-family: Georgia, "Times New Roman", Times, serif;
-	font-size: 13px;
+	font-size: 1.064em;
 	font-weight: normal;
 }
 

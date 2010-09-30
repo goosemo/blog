@@ -78,7 +78,7 @@ github.user = "goosemo"
 #### menu ####
 menu = {
         'home': '/blog',
-        'about': '/blog',
+        'about': '/about',
         'projects': '/projects',
         'presentations': '/p',
         }
