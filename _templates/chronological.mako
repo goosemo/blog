@@ -7,10 +7,14 @@
             <a href="${post.permalink}#disqus_thread">Read and Post Comments</a>
         </div>
         <div id="buttons" class="float_right">
-            <a href="http://reddit.com/submit" onclick="window.location =
-            'http://reddit.com/submit?url=' + encodeURIComponent(window.location);
-            return false"> <img src="http://reddit.com/static/spreddit7.gif" 
-            alt="submit to reddit" border="0" /> </a>
+            <script type="text/javascript">
+                reddit_url = "${post.permalink}";
+                reddit_title = "${post.title}";
+                reddit_newwindow = "1";
+            </script>
+            <script type="text/javascript" 
+            src="http://reddit.com/static/button/button1.js">
+            </script>
         </div>
     </div>
     <br/>
