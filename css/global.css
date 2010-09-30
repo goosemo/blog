@@ -357,14 +357,39 @@ div#footer div.footer_content a{
 
 /* icons */
 
-a.package {
-    background-image:url('/images/icons/icon_package.gif');
+.package {
+    background-image: url('/images/icons/icon_package.gif');
+    background-repeat:no-repeat;
+    background-position:right top;
+    display:block;
+    height: 16px;
+    width: 16px;
 }
 
-a.source {
-    background-image:url('/images/icons/page_code.gif');
+.source {
+    background-image: url('/images/icons/page_code.gif');
+    background-repeat:no-repeat;
+    background-position:right top;
+    display:block;
+    height: 16px;
+    width: 16px;
 }
 
-a.pdf {
-    background-image:url('/images/icons/file_acrobat.gif');
+.pdf {
+    background-image: url('/images/icons/file_acrobat.gif');
+    background-repeat:no-repeat;
+    background-position:right top;
+    display:block;
+    height: 16px;
+    width: 16px;
 }
+
+.slides {
+    background-image: url('/images/icons/icon_wand.gif');
+    background-repeat:no-repeat;
+    background-position:right top;
+    display:block;
+    height: 16px;
+    width: 16px;
+}
+
