@@ -45,7 +45,15 @@ p.padded{
 	margin-bottom: 16px;
 }
 
+a, a:link, a:visited, a:active {
+    color: #666;
+    text-decoration: none;
+}
 
+a:hover {
+    color: #333;
+    text-decoration: underline;
+}
 
 div#content_centered{
 	width: 890px;
