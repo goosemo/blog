@@ -24,4 +24,4 @@ def get_list(user):
 def run():
     github.logger = logging.getLogger(config['name'])
     github.repo_list = get_list(github.user)
-
+    github.full_repo_list = github_api.repos.list(github.user)
