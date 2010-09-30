@@ -3,15 +3,15 @@
   <span class="post_prose">
     
     <h1>A simple list of everything I have going on at gihub</h1>
-    
+    <br/> 
     <table border="0" cellspacing="0" cellpadding="0">
     <thead>
     <tr>
-       <th class="span-6">Project</th>
+       <th class="span-5">Project</th>
        <th class="span-8">Description</th>
-       <th class="span-10">Watchers</th>
-       <th class="span-12">Forks</th>
-       <th class="span-14">Issues</th>
+       <th class="span-1">Watchers</th>
+       <th class="span-1">Forks</th>
+       <th class="span-1">Issues</th>
     </tr>
     </thead>
     <tbody>

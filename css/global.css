@@ -225,7 +225,7 @@ div#column_right ul.sidebar_menu li div.item a{
 	color: #333;
 	display: block;
 	padding: 7px 0px 9px 6px;
-	width: 270px;
+	/*width: 270px; */
 }
 
 div#column_right ul.sidebar_menu li div.item a:hover{
