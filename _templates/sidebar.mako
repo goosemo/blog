@@ -34,7 +34,11 @@ end = start + bf.config.blog.latest_post_count
 
 % if bf.config.tweets.enabled:
 <div class="sidebar_item">
-    <h3>Twitter</h3>
+    <h3>Twitter&nbsp;
+    <a href="http://www.twitter.com/${bf.config.tweets.username}">
+    <img src="http://twitter-badges.s3.amazonaws.com/t_mini-b.png" alt="Follow
+    ${bf.config.tweets.username} on Twitter"/></a>
+    </h3>
     <script src="http://twitterjs.googlecode.com/svn/trunk/src/twitter.min.js" type="text/javascript">
     </script>
     <script type="text/javascript" charset="utf-8">

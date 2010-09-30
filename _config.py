@@ -50,7 +50,7 @@ blog.posts_per_page = 2
 controllers.tweets.enabled = True
 tweets = controllers.tweets
 tweets.username = "morganiangoose"
-tweets.count = 3
+tweets.count = 5
 tweets.enable_links = 'true'
 tweets.ignore_replies = 'false'
 tweets.template = ('<li><div class="item">%text% <a href="http://twitter.c'
