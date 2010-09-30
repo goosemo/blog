@@ -26,7 +26,8 @@ controller for the widget. And I ended up with something like this:
 
 .. _github2: http://github.com/ask/python-github2
 
-:github.py:
+github.py
+=========
 
 .. code-block:: python
 

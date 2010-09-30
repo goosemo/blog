@@ -75,7 +75,8 @@ the s5 and pdf converters from rst_ know, I am able to have parts of the
 presentation invisible in slide form, and show up only when the presentation
 is expanded, or complied into a pdf.
 
-:eg:
+eg
+==
 
 .. code-block:: rst
 

@@ -50,7 +50,8 @@ The simple blog template had some helpers, but I had to pull the
 rst_template.py filter from the blogofile.com template and edit it to give me the
 highlighting control that I wanted. 
 
-:rst_template.py changes:
+rst_template.py changes
+=======================
 
 .. code-block:: python
 

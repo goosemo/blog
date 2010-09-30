@@ -16,7 +16,8 @@ The problem that came up in doing this is when I wanted the function that makes 
 
 Here is a basic example:
 
-**script.py**
+script.py
+=========
 
 .. code-block:: python
 
@@ -45,7 +46,8 @@ Here is a basic example:
                 )
 
 
-**automation.py** (library w/ functions)
+automation.py (library w/ functions)
+========================================
 
 .. code-block:: python
 
