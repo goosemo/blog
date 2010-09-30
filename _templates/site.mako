@@ -4,8 +4,6 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <link rel="stylesheet" href="/css/global.css" type="text/css"  charset="utf-8" />
-        <link rel="stylesheet" href="/css/table.css" type="text/css"  charset="utf-8" />
         ${self.head()}
     </head>
     
@@ -41,6 +39,5 @@
 
 <%def name="footer()">
     <hr/>
-    This is a footer that appears on every page.
     <%include file="footer.mako" />
 </%def>

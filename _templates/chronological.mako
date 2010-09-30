@@ -5,6 +5,8 @@
   <div class="after_post"><a href="${post.permalink}#disqus_thread">Read and Post Comments</a></div>
 % endif
   <hr class="interblog" />
+  <br/>
+  <br/>
 % endfor
 % if prev_link:
  <a href="${prev_link}">« Previous Page</a>

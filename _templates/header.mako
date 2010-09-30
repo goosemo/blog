@@ -8,4 +8,3 @@
         % endfor
         </ul>
     </div>
-    <hr/>

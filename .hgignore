@@ -3,4 +3,5 @@ _site
 *.pyc
 *.bak
 *.swp
+*.tgz
 
