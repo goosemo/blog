@@ -69,6 +69,11 @@ controllers.google_analytics.enabled = True
 google_analytics = controllers.google_analytics
 google_analytics.id = "UA-9907711-1"
 
+#### github projects ####
+controllers.github.enabled = True
+github = controllers.github
+github.user = "goosemo"
+
 #### Disqus.com comment integration ####
 blog.disqus.enabled = True
 blog.disqus.name    = "magoo"

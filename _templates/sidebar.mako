@@ -31,6 +31,7 @@ end = start + bf.config.blog.latest_post_count
 </div>
 <br />
 
+% if bf.config.tweets.enabled:
 <div class="sidebar_item">
     <h3>Twitter</h3>
     <script src="http://twitterjs.googlecode.com/svn/trunk/src/twitter.min.js" type="text/javascript">
@@ -49,6 +50,7 @@ end = start + bf.config.blog.latest_post_count
     </div>
 </div>
 <br />
+% endif
 
 <div class="sidebar_item">
 <h3>Links</h3>
@@ -65,3 +67,7 @@ end = start + bf.config.blog.latest_post_count
 </ul>
 </div>
 <br />
+
+% if bf.config.github.enabled:
+<%include file="github.mako" />
+% endif
