@@ -1,6 +1,8 @@
 ---
 title: Github and Bitbucket hooks
 date: 2010/09/29 17:40:10
+catagories: Version Control
+tags: hg, git, hooks, bash
 ---
 
 I use hg but like github

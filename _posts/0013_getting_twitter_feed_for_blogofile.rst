@@ -1,6 +1,8 @@
 ---
 title: Getting twitter feed running for Blogofile
 date: 2010/09/28 19:21:05
+Catagories: Programming, Website
+tags: python, javascript, twitter, blogofile
 ---
 
 A small part to making it match
