@@ -2,7 +2,7 @@
 <div class="blog_post">
   <span class="post_prose">
     
-    <h1>A simple list of everything I have going on at gihub</h1>
+    <h1>Simple list of everything I have going on at gihub</h1>
     <br/> 
     <table border="0" cellspacing="0" cellpadding="0">
     <thead>
