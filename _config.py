@@ -78,7 +78,9 @@ github.user = "goosemo"
 #### menu ####
 menu = {
         'home': '/blog',
+        'about': '/blog',
         'projects': '/projects',
+        'presentations': '/p',
         }
 #### Disqus.com comment integration ####
 blog.disqus.enabled = True

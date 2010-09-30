@@ -54,13 +54,13 @@ had pushes to, and then push to the other:
     #post-push to bitbucket
     if [[ $HG_ARGS =~ "push bitbucket" ]]
     then 
-        hg push github --quite
+        hg push github --quiet
     fi
 
     #post-push to github
     if [[ $HG_ARGS =~ "push github" ]]
     then 
-        hg push bitbucket --quite
+        hg push bitbucket --quiet
     fi
 
 Note that the quiet flags or similar must be employed, otherwise you'll get
