@@ -27,3 +27,4 @@ ${", ".join(category_links)}
   ${post.content}
 </%def>
 <br/>
+

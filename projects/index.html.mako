@@ -21,7 +21,7 @@
         <td><a href="${project.url}" title="${project.name}">
         ${project.name}</a></td>
         <td>${project.description}</td>
-        <td>${project.watchers}</td>
+        <td>${project.watchers - 1}</td> 
         <td>${project.forks}</td>
         <td>${project.open_issues}</td>
     </tr>
