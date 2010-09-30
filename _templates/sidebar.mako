@@ -25,6 +25,7 @@ end = start + bf.config.blog.latest_post_count
     <li> 
         <a href="${category.path}">${category}</a> (<a href="${category.path}/feed">rss</a>) (${num_posts})
     </li>
+    <br/>
 </div>
 % endfor
 </ul>
@@ -63,6 +64,7 @@ end = start + bf.config.blog.latest_post_count
 % for link, name, num_posts in bf.config.blog.archive_links:                
     <li><a href="${bf.util.site_path_helper(bf.config.blog.path,link)}/1"
     title="${name}">${name}</a>&nbsp;(${num_posts})</li>
+    <br/>
 % endfor
 </ul>
 </div>

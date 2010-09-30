@@ -4,6 +4,7 @@
 % for project in bf.config.controllers.github.repo_list:
     <li><a href="${project.url}" title="${project.name}">
     ${project.name}</a>&nbsp;${project.description}</li>
+    <br/>
 % endfor
 </ul>
 </div>
