@@ -74,7 +74,6 @@ controllers.github.enabled = True
 github = controllers.github
 github.user = "goosemo"
 
-
 #### menu ####
 menu = {
         'home': '/blog',
@@ -90,6 +89,12 @@ links = (
 
         ('Fabric', 'SSH made awesome by wrapping in Python',
             'http://docs.fabfile.org'),
+
+        ('OSU GCC', 'Game creation club at OSU',
+            'http://gamedev.osu.edu'),
+
+        ('OSU OSC', 'Open souce club at OSU',
+            'http://opensource.osu.edu'),
     )
 
 #### Disqus.com comment integration ####

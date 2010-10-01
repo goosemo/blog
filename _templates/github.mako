@@ -1,3 +1,4 @@
+% if bf.config.github.enabled:
 <div class="sidebar_item">
 <h3>Github Projects</h3>
 <ul>
@@ -9,4 +10,4 @@
 </ul>
 </div>
 <br />
-
+% endif
