@@ -15,6 +15,8 @@ now use daily. I can't really get used to another way to work with my mail
 anymore. A brief reprieve due to moving places recently forced me to use gmail
 only and it wan't anywhere near as simple.
 
+.. _mutt: http://mutt.org
+
 What mutt is
 ------------
 

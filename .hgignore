@@ -5,3 +5,5 @@ _site
 *.swp
 *.tgz
 *pip-log.txt
+password.py
+

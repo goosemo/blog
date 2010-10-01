@@ -45,6 +45,8 @@ end = start + bf.config.blog.latest_post_count
 </div>
 <br />
 
+<%include file="top_posts.mako" />
+
 <div class="sidebar_item">
 <h3>Archives</h3>
 <ul>

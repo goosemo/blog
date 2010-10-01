@@ -103,6 +103,20 @@ feedburner.url = "http://feeds.feedburner.com/morgangoose/FCyR"
 controllers.google_analytics.enabled = True
 google_analytics = controllers.google_analytics
 google_analytics.id = "UA-9907711-1"
+google_analytics.table_id = "ga:19940817"
+google_analytics.top_posts_number = 5
+google_analytics.app_name = "blogfile_top_posts"
+google_analytics.start_date = "2009-04-20"
+
+from datetime import date
+today = date.today()
+google_analytics.end_date = today.strftime("%Y-%m-%d")
+
+import password
+google_analytics.username = password.get_username()
+google_analytics.password = password.get_password()
+
+
 
 #### github projects ####
 controllers.github.enabled = True
