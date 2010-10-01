@@ -42,60 +42,10 @@ blog.description = "affiliated with the society of blog bloggables"
 ## blog_timezone -- the timezone that you normally write your blog posts from
 blog.timezone = "US/Eastern"
 
-## extra blog settings ##
-blog.latest_post_count = 8
-blog.posts_per_page = 2
-
-### Twitter Settings ###
-controllers.tweets.enabled = True
-tweets = controllers.tweets
-tweets.username = "morganiangoose"
-tweets.count = 5
-tweets.enable_links = 'true'
-tweets.ignore_replies = 'false'
-tweets.template = ('<li><div class="item">%text% <a href="http://twitter.c'
-         'om/%user_screen_name%/statuses/%id%/">%time%</a></div></li><br/>')
 
 ######################################################################
 # Intermediate Settings
 ######################################################################
-#### Feedburner settings ####
-controllers.feedburner.enabled = True
-feedburner = controllers.feedburner
-feedburner.url = "http://feeds.feedburner.com/morgangoose/FCyR"
-
-#### Google Analytics ####
-controllers.google_analytics.enabled = True
-google_analytics = controllers.google_analytics
-google_analytics.id = "UA-9907711-1"
-
-#### github projects ####
-controllers.github.enabled = True
-github = controllers.github
-github.user = "goosemo"
-
-#### menu ####
-menu = {
-        'home': '/blog',
-        'about': '/about',
-        'projects': '/projects',
-        'presentations': '/p',
-        }
-
-#### links ####
-links = (
-        ('Alfred', 'Smart friend of mine', 
-            'http://www.alfredrossi.com/'),
-
-        ('Fabric', 'SSH made awesome by wrapping in Python',
-            'http://docs.fabfile.org'),
-
-        ('OSU GCC', 'Game creation club at OSU',
-            'http://gamedev.osu.edu'),
-
-        ('OSU OSC', 'Open souce club at OSU',
-            'http://opensource.osu.edu'),
-    )
 
 #### Disqus.com comment integration ####
 blog.disqus.enabled = True
@@ -137,6 +87,65 @@ blog.post_default_filters = {
     "rst": "syntax_highlight, rst, paragraph_permalinks",
     "html": "syntax_highlight, paragraph_permalinks"
 }
+
+
+
+######################################################################
+# My additions
+######################################################################
+
+#### Feedburner settings ####
+controllers.feedburner.enabled = True
+feedburner = controllers.feedburner
+feedburner.url = "http://feeds.feedburner.com/morgangoose/FCyR"
+
+#### Google Analytics ####
+controllers.google_analytics.enabled = True
+google_analytics = controllers.google_analytics
+google_analytics.id = "UA-9907711-1"
+
+#### github projects ####
+controllers.github.enabled = True
+github = controllers.github
+github.user = "goosemo"
+
+#### menu ####
+menu = {
+        'home': '/blog',
+        'about': '/about',
+        'projects': '/projects',
+        'presentations': '/p',
+        }
+
+#### links ####
+links = (
+        ('Alfred', 'Smart friend of mine', 
+            'http://www.alfredrossi.com/'),
+
+        ('Fabric', 'SSH made awesome by wrapping in Python',
+            'http://docs.fabfile.org'),
+
+        ('OSU GCC', 'Game creation club at OSU',
+            'http://gamedev.osu.edu'),
+
+        ('OSU OSC', 'Open souce club at OSU',
+            'http://opensource.osu.edu'),
+    )
+
+## extra blog settings ##
+blog.latest_post_count = 8
+blog.posts_per_page = 2
+
+### Twitter Settings ###
+controllers.tweets.enabled = True
+tweets = controllers.tweets
+tweets.username = "morganiangoose"
+tweets.count = 5
+tweets.enable_links = 'true'
+tweets.ignore_replies = 'false'
+tweets.template = ('<li><div class="item">%text% <a href="http://twitter.c'
+         'om/%user_screen_name%/statuses/%id%/">%time%</a></div></li><br/>')
+
 
 ### Pre/Post build hooks:
 def pre_build():

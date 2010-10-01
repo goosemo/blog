@@ -4,4 +4,4 @@ _site
 *.bak
 *.swp
 *.tgz
-
+*pip-log.txt

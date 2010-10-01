@@ -19,6 +19,9 @@ def publish(post_name):
     """
     pass
 
+def install():
+    local("sudo pip install -r requirements.txt")
+
 @hosts('h4941w83@morgangoose.com')
 def build():
     local("blogofile build")

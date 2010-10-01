@@ -1,0 +1,5 @@
+blogofile
+pyquery
+github2
+simplejson
+http://gdata-python-client.googlecode.com/files/gdata-2.0.12.tar.gz
