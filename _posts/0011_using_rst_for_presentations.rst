@@ -29,8 +29,8 @@ Since it comes with some tools to take a simple plain text document and
 transform it into other well known formats (latex, html, and pdf), caused me
 to use it in a number of projects and for notes without much friction.
 
-How I use rst
--------------
+How I use reST
+--------------
 
 I mentioned in a previous post_ about my setup and how I leverage fabric_ to
 build and post my presentations, but I didn't really get too much into the
@@ -229,3 +229,11 @@ the final rst-directive.py looks like this though:
     publish_cmdline(writer_name='s5', description=description)
 
 
+And in combination with my `fabric setup <http://morgangoose.com/blog/2010/02/how-fabric-gets-it-right/>`_
+I can make new posts, publish to html and pdf, and republish with relative ease:
+
+.. code-block:: bash 
+
+    $ fab new:new_stuff
+    $ vim new_stuff/new_stuff.rst
+    $ fab upload:new_stuff
