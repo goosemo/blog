@@ -210,12 +210,18 @@ div#column_right div.sidebar_item{
 }
 
 div#column_right div.sidebar_item h3{
-	font-size: 16px;
+	font-size: 1.000em;
+    font-weight: bold;
 	margin: 0px 0px 4px 0px;
 }
 
+div#column_right div.sidebar_item ul li{
+	font-size: 0.938em;
+
+}
+
 div#column_right div.sidebar_item p{
-	font-size: 1.0em;
+	font-size: 0.938em;
 	/*line-height: 14px;*/
 }
 

@@ -94,6 +94,10 @@ blog.post_default_filters = {
 # My additions
 ######################################################################
 
+#### Similar Posts ####
+blog.similar_posts.enabled = False
+blog.similar_posts.count = 3
+
 #### Feedburner settings ####
 controllers.feedburner.enabled = True
 feedburner = controllers.feedburner
@@ -101,6 +105,7 @@ feedburner.url = "http://feeds.feedburner.com/morgangoose/FCyR"
 
 #### Google Analytics ####
 controllers.google_analytics.enabled = True
+controllers.google_analytics.top_posts_enabled = True
 google_analytics = controllers.google_analytics
 google_analytics.id = "UA-9907711-1"
 google_analytics.table_id = "ga:19940817"
@@ -116,6 +121,7 @@ import password
 google_analytics.username = password.get_username()
 google_analytics.password = password.get_password()
 
+google_analytics.show_count = False
 
 
 #### github projects ####

@@ -1,5 +1,5 @@
 ---
-categories: Linux, Webservers
+categories: Linux, Servers
 date: 2010/06/02 22:52:43
 guid: http://morgangoose.com/blog/2010/06/fedora-kvm-with-simple-netowrk-forward/
 permalink: http://morgangoose.com/blog/2010/06/fedora-kvm-with-simple-network-forwards/

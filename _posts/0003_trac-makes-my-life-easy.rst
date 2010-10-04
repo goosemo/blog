@@ -1,5 +1,5 @@
 ---
-categories: Linux, Webservers
+categories: Linux, Servers
 date: 2009/07/22 17:15:23
 guid: http://morgangoose.com/blog/?p=43
 permalink: http://morgangoose.com/blog/2009/07/trac-makes-my-life-easy/

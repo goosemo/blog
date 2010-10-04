@@ -44,3 +44,7 @@ q:before, q:after {
 blockquote, q {
 	quotes: "" "";
 }
+
+/* avoid browser default inconsistent heading font-sizes */
+/* and pre/code too */
+h1,h2,h3,h4,h5,h6,pre,code { font-size:1em; }
