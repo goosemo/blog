@@ -1,13 +1,7 @@
 import logging
 
 from blogofile.cache import bf
-google_analytics = bf.config.controllers.google_analytics
-
-config = {
-    "name": "Google Analytics",
-    "description": "Makes the comments RSS point to google analytics",
-    "priority": 95.0,
-    }
+analytics = bf.config.controllers.google.analytics
 
 def get_top_posts():
     """Main function for the sample."""
@@ -37,12 +31,12 @@ class DataFeedDemo(object):
         import gdata.sample_util
 
         gd_client = gdata.analytics.client.AnalyticsClient(
-                source=google_analytics.app_name)
+                source=analytics.app_name)
 
         gd_client.ClientLogin(
-                google_analytics.username,
-                google_analytics.password,
-                google_analytics.app_name,);
+                analytics.username,
+                analytics.password,
+                analytics.app_name,);
         """
         try:
             gdata.sample_util.authorize_client(
@@ -58,14 +52,14 @@ class DataFeedDemo(object):
             exit('Login Error')
         """
         data_query = gdata.analytics.client.DataFeedQuery({
-            'ids': google_analytics.table_id,
+            'ids': analytics.table_id,
             'dimensions': 'ga:pagePath',
             'metrics': 'ga:pageViews',
             'filters': 'ga:pagePath=~^/blog/.[0-9].+/',
             'sort': '-ga:pageViews',
-            'start-date': google_analytics.start_date,
-            'end-date': google_analytics.end_date,
-            'max-results': str(google_analytics.top_posts_number),
+            'start-date': analytics.start_date,
+            'end-date': analytics.end_date,
+            'max-results': str(analytics.top_posts_number),
             })
         
         self.feed = gd_client.GetDataFeed(data_query)
@@ -176,7 +170,6 @@ class DataFeedDemo(object):
         return top
 
 def run():
-    google_analytics.logger = logging.getLogger(config['name'])
-    google_analytics.top_posts = get_top_posts()
+    analytics.top_posts = get_top_posts()
 
 

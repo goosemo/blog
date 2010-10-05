@@ -60,3 +60,5 @@ end = start + bf.config.blog.latest_post_count
 <br />
 
 <%include file="github.mako" />
+
+<%include file="adsense.mako" />

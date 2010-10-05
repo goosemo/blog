@@ -98,38 +98,46 @@ blog.post_default_filters = {
 blog.similar_posts.enabled = False
 blog.similar_posts.count = 3
 
-#### Feedburner settings ####
-controllers.feedburner.enabled = True
-feedburner = controllers.feedburner
+# Google supplied stuff 
+# ----------------------
+controllers.google.enabled = True
+google = controllers.google
+
+## Feedburner settings
+feedburner = google.feedburner
+feedburner.enabled = True
 feedburner.url = "http://feeds.feedburner.com/morgangoose/FCyR"
 
-#### Google Analytics ####
-controllers.google_analytics.enabled = True
-controllers.google_analytics.top_posts_enabled = True
-google_analytics = controllers.google_analytics
-google_analytics.id = "UA-9907711-1"
-google_analytics.table_id = "ga:19940817"
-google_analytics.top_posts_number = 5
-google_analytics.app_name = "blogfile_top_posts"
-google_analytics.start_date = "2009-04-20"
+## Adsense 
+adsense = google.adsense
+adsense.enabled = True
 
+## Google Analytics
+analytics = google.analytics
+analytics.enabled = True
+import password
+analytics.username = password.get_username()
+analytics.password = password.get_password()
+analytics.id = "UA-9907711-1"
+analytics.table_id = "ga:19940817"
+analytics.top_posts_number = 5
+analytics.app_name = "blogfile_top_posts"
+analytics.start_date = "2009-04-20"
+
+### Top post count
 from datetime import date
 today = date.today()
-google_analytics.end_date = today.strftime("%Y-%m-%d")
-
-import password
-google_analytics.username = password.get_username()
-google_analytics.password = password.get_password()
-
-google_analytics.show_count = False
+analytics.top_posts_enabled = True
+analytics.show_count = False
+analytics.end_date = today.strftime("%Y-%m-%d")
 
 
-#### github projects ####
+## github projects
 controllers.github.enabled = True
 github = controllers.github
 github.user = "goosemo"
 
-#### menu ####
+## menu
 menu = {
         'home': '/blog',
         'about': '/about',
@@ -137,7 +145,7 @@ menu = {
         'presentations': '/p',
         }
 
-#### links ####
+## links
 links = (
         ('Alfred', 'Smart friend of mine', 
             'http://www.alfredrossi.com/'),
@@ -150,13 +158,17 @@ links = (
 
         ('OSU OSC', 'Open souce club at OSU',
             'http://opensource.osu.edu'),
+
+        ('al3k', 'Good blog from an OSC member',
+            'http://al3k.net/'),
+
     )
 
-## extra blog settings ##
+## extra blog settings 
 blog.latest_post_count = 8
 blog.posts_per_page = 2
 
-### Twitter Settings ###
+## Twitter Settings
 controllers.tweets.enabled = True
 tweets = controllers.tweets
 tweets.username = "morganiangoose"

@@ -10,6 +10,5 @@ config = {
 
 def run():
     feedburner = bf.config.controllers.feedburner
-    feedburner.logger = logging.getLogger(config['name'])
 
 

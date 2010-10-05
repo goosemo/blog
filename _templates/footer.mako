@@ -30,7 +30,7 @@ RSS feeds for <a href="${bf.util.site_path_helper(bf.config.blog.path,'feed')}">
 </script>
 % endif
 
-% if bf.config.google_analytics.enabled:
+% if bf.config.google.analytics.enabled:
     <%include file="google_analytics.mako"/>
 % endif
 </div>

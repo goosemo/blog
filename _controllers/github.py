@@ -9,7 +9,7 @@ github_api = Github()
 config = {
     "name": "Github",
     "description": "Makes a nice github project listing for the sidebar",
-    "priority": 90.0,
+    "priority": 95.0,
     }
 
 def get_list(user):
