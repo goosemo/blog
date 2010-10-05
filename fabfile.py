@@ -2,7 +2,8 @@ from fabric.api import *
 
 def package():
     with cd("_site/"):
-        local("tar zcvf ../blog.tgz blog css projects p images about")
+        local(("tar zcvf ../blog.tgz blog css projects p images about "
+            "sitemap.xml "))
 
 def new_post(post_name):
     post_template = """
@@ -29,6 +30,9 @@ def test():
 @hosts('h4941w83@morgangoose.com')
 def build():
     local("blogofile build")
+    local("python _extenstions/sitemap_gen/sitemap_gen.py \
+            --config=_extenstions/sitemap_gen/config.xml")
+
     package()
     put("blog.tgz", "var/www/html/")
     with cd("var/www/html/"):
