@@ -30,8 +30,8 @@ def test():
 @hosts('h4941w83@morgangoose.com')
 def build():
     local("blogofile build")
-    local("python _extenstions/sitemap_gen/sitemap_gen.py \
-            --config=_extenstions/sitemap_gen/config.xml")
+    local(("python _extensions/sitemap_gen/sitemap_gen.py "
+        "--config=_extensions/sitemap_gen/config.xml"))
 
     package()
     put("blog.tgz", "var/www/html/")
