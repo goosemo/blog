@@ -6,19 +6,30 @@ def package():
             "sitemap.xml "))
 
 def new_post(post_name):
-    post_template = """
-    ---
-    title: %{post_name}
-    date: %{post_date}
-    draft: true
-    ---
-    """
+    post_template = "\n".join([
+        "---",
+        "title: %(post_name)s",
+        "date: %(post_date)s",
+        "draft: true",
+        "---"])
+    
+    post_date = "2000/01/01 00:00:01"
+    post_format = "_posts/0000_%s.rst"
+    post_filename = "_".join(post_name.split(" "))
+    with open(post_format % post_filename, 'w') as post:
+            post.write(post_template % locals())
+
 
 def publish(post_name):
     """
     sed -e's/draft: true/draft: false'
     """
-    pass
+    from datetime import datetime
+
+    now = datetime.now()
+    post_date = now.strftime('%Y-%m-%d %H:%M:%S')
+    print post_date
+        
 
 def install():
     local("sudo pip install -r requirements.txt")
