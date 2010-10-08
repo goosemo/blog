@@ -185,7 +185,8 @@ Running it
 
 In parallel, as specified on the cli. Note that this is an example of not in 
 using the decorators to set this in the code, so it as a task/function can 
-toggle between being run in parallel or sequentially.
+toggle between being run in parallel or sequentially. There are 49 servers in
+the 'servers' list that I'm applying to this task.
 
 .. code-block:: bash
 
