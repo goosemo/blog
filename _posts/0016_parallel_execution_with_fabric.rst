@@ -1,7 +1,8 @@
 ---
 title: parallel execution with fabric
-date: 2000/01/01 00:00:01
-draft: true
+date: 2010/10/08 19:00:15
+categories: Programming
+tags: python, fabric, multiprocessing, job_queue
 ---
 
 It's been a wish for some for a long time

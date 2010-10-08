@@ -27,9 +27,11 @@ def publish(post_name):
     from datetime import datetime
 
     now = datetime.now()
-    post_date = now.strftime('%Y-%m-%d %H:%M:%S')
-    print post_date
-        
+    old_post_date = "2000/01/01 00:00:01"
+    post_date = now.strftime('%Y/%m/%d %H:%M:%S')
+    post_format = "_posts/0000_%s.rst"
+    post = post_format % "_".join(post_name.split(" "))
+    local("sed -i -e's!%s!%s!' %s" % (old_post_date, post_date, post))
 
 def install():
     local("sudo pip install -r requirements.txt")
