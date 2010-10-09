@@ -3,6 +3,7 @@ title: Parallel execution with fabric
 date: 2010/10/08 19:00:15
 categories: Programming
 tags: python, fabric, multiprocessing, job_queue
+reddit: Python
 ---
 
 It's been a wish for some for a long time

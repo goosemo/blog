@@ -9,6 +9,11 @@
                 reddit_title = "${post.title}";
                 reddit_newwindow = "1";
                 reddit_styled = "off";
+                % if hasattr(post,'reddit'):
+                reddit_target="${post.reddit}";
+                % else:
+                reddit_target="linux";
+                % endif
             </script>
             <script type="text/javascript" 
             src="http://reddit.com/static/button/button1.js">
