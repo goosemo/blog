@@ -3,6 +3,7 @@ title: Github and Bitbucket hooks
 date: 2010/09/29 17:40:10
 categories: Version Control
 tags: hg, git, hooks, bash
+reddit: Python
 ---
 
 I use hg but like github
