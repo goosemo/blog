@@ -32,7 +32,9 @@ end = start + bf.config.blog.latest_post_count
 </div>
 <br />
 
+% if hasattr(bf.config, "tweets"):
 <%include file="tweets.mako" />
+% endif
 
 <div class="sidebar_item">
 <h3>Links</h3>
@@ -45,7 +47,9 @@ end = start + bf.config.blog.latest_post_count
 </div>
 <br />
 
+% if hasattr(bf.config, "google"):
 <%include file="top_posts.mako" />
+% endif
 
 <div class="sidebar_item">
 <h3>Archives</h3>
@@ -59,6 +63,11 @@ end = start + bf.config.blog.latest_post_count
 </div>
 <br />
 
-<%include file="github.mako" />
 
+% if hasattr(bf.config, "github"):
+<%include file="github.mako" />
+% endif 
+
+% if hasattr(bf.config, "google"):
 <%include file="adsense.mako" />
+% endif

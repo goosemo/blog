@@ -136,6 +136,10 @@ analytics.end_date = today.strftime("%Y-%m-%d")
 controllers.github.enabled = True
 github = controllers.github
 github.user = "goosemo"
+github.link_watchers = True
+github.link_forks = True
+github.link_issues = True
+github.link_rss_feed = False
 
 ## menu
 menu = {
@@ -143,7 +147,7 @@ menu = {
         'about': '/about',
         'projects': '/projects',
         'presentations': '/p',
-        }
+    }
 
 ## links
 links = (

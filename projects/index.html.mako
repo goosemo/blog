@@ -15,15 +15,32 @@
     </tr>
     </thead>
     <tbody>
-
-    % for project in bf.config.controllers.github.full_repo_list:
+<%
+    github = bf.config.controllers.github
+%>
+    % for project in github.full_repo_list:
     <tr>
         <td><a href="${project.url}" title="${project.name}">
         ${project.name}</a></td>
         <td>${project.description}</td>
-        <td>${project.watchers - 1}</td> 
+        
+        % if github.link_watchers:
+        <td><a href="${project.url}/watchers">${project.watchers - 1}</a></td>
+        % else:
+        <td>${project.watchers - 1}</td>
+        % endif
+        
+        % if github.link_forks:
+        <td><a href="${project.url}/network">${project.forks}</a></td>
+        % else:
         <td>${project.forks}</td>
+        % endif
+        
+        % if github.link_issues:
+        <td><a href="${project.url}/issues">${project.open_issues}</a></td>
+        % else:
         <td>${project.open_issues}</td>
+        % endif
     </tr>
     % endfor
     </tbody>
