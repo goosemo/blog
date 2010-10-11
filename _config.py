@@ -183,6 +183,11 @@ tweets.template = ('<li><div class="item">%text% <a href="http://twitter.c'
          'om/%user_screen_name%/statuses/%id%/">%time%</a></div></li><br/>')
 
 
+## Reddit button
+controllers.reddit.enabled = True
+reddit = controllers.reddit
+reddit.button = True
+
 ### Pre/Post build hooks:
 def pre_build():
     #Do whatever you want before the _site is built
