@@ -8,6 +8,7 @@
     <script src="http://twitterjs.googlecode.com/svn/trunk/src/twitter.min.js" type="text/javascript">
     </script>
     <script type="text/javascript" charset="utf-8">
+    <!--
     getTwitters('tweet', { 
         id: '${bf.config.tweets.username}', 
         count: ${bf.config.tweets.count}, 
@@ -16,7 +17,9 @@
         clearContents: true,
         template: '${bf.config.tweets.template}',
     });
+    -->
     </script>
+    
     <div id="tweet">
     </div>
 </div>

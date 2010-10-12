@@ -84,7 +84,7 @@ blog.post_default_filters = {
     "markdown": "syntax_highlight, markdown, paragraph_permalinks",
     "textile": "syntax_highlight, textile, paragraph_permalinks",
     "org": "syntax_highlight, org, paragraph_permalinks",
-    "rst": "syntax_highlight, rst, paragraph_permalinks",
+    "rst": "syntax_highlight, rst", #, paragraph_permalinks",
     "html": "syntax_highlight, paragraph_permalinks"
 }
 
@@ -179,8 +179,8 @@ tweets.username = "morganiangoose"
 tweets.count = 5
 tweets.enable_links = 'true'
 tweets.ignore_replies = 'false'
-tweets.template = ('<li><div class="item">%text% <a href="http://twitter.c'
-         'om/%user_screen_name%/statuses/%id%/">%time%</a></div></li><br/>')
+tweets.template = ('<li class="item">%text% <a href="http://twitter.c'
+         'om/%user_screen_name%/statuses/%id%/">%time%</a></li>')
 
 
 ## Reddit button

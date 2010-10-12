@@ -1,6 +1,6 @@
 <p id="credits">
-Powered by <a href="http://www.blogofile.com">Blogofile</a>.<br/>
-<br/>
+Powered by <a href="http://www.blogofile.com">Blogofile</a>.<br />
+<br />
 
 % if bf.config.feedburner.enabled:
 RSS feeds for <a href="${bf.config.feedburner.url}">Entries</a>
@@ -11,7 +11,7 @@ RSS feeds for <a href="${bf.util.site_path_helper(bf.config.blog.path,'feed')}">
 % if bf.config.blog.disqus.enabled:
  and <a href="http://${bf.config.blog.disqus.name}.disqus.com/latest.rss">Comments</a>.
 % endif
-<br>
+<br />
 </p>
 % if bf.config.blog.disqus.enabled:
 <script type="text/javascript">

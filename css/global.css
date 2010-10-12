@@ -212,12 +212,12 @@ div#column_right div.sidebar_item{
 div#column_right div.sidebar_item h3{
 	font-size: 1.000em;
     font-weight: bold;
-	margin: 0px 0px 4px 0px;
+	margin: 0px 0px 10px 0px;
 }
 
 div#column_right div.sidebar_item ul li{
 	font-size: 0.938em;
-
+	margin: 0px 0px 6px 0px;
 }
 
 div#column_right div.sidebar_item p{
@@ -235,7 +235,7 @@ div#column_right ul.sidebar_menu li{
 	display: block;
 }
 
-div#column_right ul.sidebar_menu li div.color{
+div#column_right ul.sidebar_menu li.color{
 	width: 3px;
 	float: left;
 	height: 100%;
@@ -243,7 +243,7 @@ div#column_right ul.sidebar_menu li div.color{
 	display: inline;
 }
 
-div#column_right ul.sidebar_menu li div.item a{
+div#column_right ul.sidebar_menu li.item a{
 	text-decoration: none;
 	background-color: #ccc;
 	font-size: 1.0em;
@@ -253,12 +253,12 @@ div#column_right ul.sidebar_menu li div.item a{
 	/*width: 270px; */
 }
 
-div#column_right ul.sidebar_menu li div.item a:hover{
+div#column_right ul.sidebar_menu li.item a:hover{
 	background-color: #aaa;
 	color: #fff
 }
 
-div#column_right ul.sidebar_menu li div.item{
+div#column_right ul.sidebar_menu li.item{
 	background-color: #ccc;
     /*height: 28px;*/
 	width: 100%;

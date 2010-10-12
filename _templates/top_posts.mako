@@ -9,7 +9,6 @@
     (${num_hits})
     % endif
     </li>
-    <br/>
 % endfor
 </ul>
 </div>

@@ -14,5 +14,5 @@
         </script>
     </div>
 </div>
-<br/>
+<br />
 % endif

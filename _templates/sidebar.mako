@@ -6,10 +6,8 @@ end = start + bf.config.blog.latest_post_count
 <h3>Latest ${end-start} Posts</h3>
 <ul class="sidebar_menu">
 % for post in bf.config.blog.posts[start:end]:
-    <li>
-        <div class="item">
-            <a href="${post.path}">${post.title}</a>
-        </div>
+    <li class="item">
+        <a href="${post.path}">${post.title}</a>
     </li>
 % endfor
 </ul>
@@ -21,12 +19,9 @@ end = start + bf.config.blog.latest_post_count
 <h3>Categories</h3>
 <ul>
 % for category, num_posts in bf.config.blog.all_categories:
-<div class="item">
-    <li> 
+    <li class="item"> 
         <a href="${category.path}">${category}</a> (<a href="${category.path}/feed">rss</a>) (${num_posts})
     </li>
-    <br/>
-</div>
 % endfor
 </ul>
 </div>
@@ -40,8 +35,7 @@ end = start + bf.config.blog.latest_post_count
 <h3>Links</h3>
 <ul>
 % for name, desc, url in bf.config.links:
-    <li><a href="${url}" title="${name}">${name}</a> - ${desc}</li>
-    <br/>
+    <li class="item"><a href="${url}" title="${name}">${name}</a> - ${desc}</li>
 % endfor 
 </ul>
 </div>
@@ -55,9 +49,8 @@ end = start + bf.config.blog.latest_post_count
 <h3>Archives</h3>
 <ul>
 % for link, name, num_posts in bf.config.blog.archive_links:                
-    <li><a href="${bf.util.site_path_helper(bf.config.blog.path,link)}/1"
+    <li class="item"><a href="${bf.util.site_path_helper(bf.config.blog.path,link)}/1"
     title="${name}">${name}</a>&nbsp;(${num_posts})</li>
-    <br/>
 % endfor
 </ul>
 </div>

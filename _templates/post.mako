@@ -1,6 +1,9 @@
 <%page args="post"/>
 <div class="blog_post">
-  <a name="${post.title}" />
+<% 
+    post_anchor = "-".join(post.title.split(" "))
+%>
+  <a name="${post_anchor}" />
   <h1 class="blog_post_title"><a href="${post.permapath()}" rel="bookmark" title="Permanent Link to ${post.title}">${post.title}</a></h1>
   <h3>${post.date.strftime("%B %d, %Y at %I:%M %p")} | categories: 
 <% 
@@ -17,14 +20,14 @@ ${", ".join(category_links)}
  | <a href="${post.permalink}#disqus_thread">View Comments</a>
 % endif
 </h3>
-<br/>
-  <span class="post_prose">
+<br />
+  <div class="post_prose">
     ${self.post_prose(post)}
-  </span>
+  </div>
 </div>
 
 <%def name="post_prose(post)">
   ${post.content}
 </%def>
-<br/>
+<br />
 
