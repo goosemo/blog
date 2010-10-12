@@ -3,7 +3,7 @@ from fabric.api import *
 def package():
     with cd("_site/"):
         local(("tar zcvf ../blog.tgz blog css projects p images about "
-            "sitemap.xml "))
+            "sitemap.xml blank.html "))
 
 def new_post(post_name):
     post_template = "\n".join([
