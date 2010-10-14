@@ -1,3 +1,5 @@
+import os 
+
 from fabric.api import *
 
 def package():
@@ -36,6 +38,10 @@ def _get_next_post_number():
     """
     return "%04d" % (max([int(x[:4]) for x in os.listdir('_posts')]) + 1)
 
+
+def drafts():
+    for post in [x for x in os.listdir('_posts') if x.startswith("0000")]:
+        print post
 
 def publish(post_name):
     """
