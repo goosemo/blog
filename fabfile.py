@@ -20,6 +20,10 @@ def new_post(post_name):
             post.write(post_template % locals())
 
 
+def _get_next_post_number():
+    return "%04d" % (max([int(x[:4]) for x in os.listdir('_posts')]) + 1)
+
+
 def publish(post_name):
     """
     sed -e's/draft: true/draft: false'
@@ -32,6 +36,8 @@ def publish(post_name):
     post_format = "_posts/0000_%s.rst"
     post = post_format % "_".join(post_name.split(" "))
     local("sed -i -e's!%s!%s!' %s" % (old_post_date, post_date, post))
+    local("mv _posts/{0000,%s}_%s.rst" % (_get_next_post_number,
+        "_".join(post_name.split(" ")))
 
 def install():
     local("sudo pip install -r requirements.txt")
