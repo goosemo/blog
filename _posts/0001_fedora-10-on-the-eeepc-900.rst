@@ -4,6 +4,7 @@ date: 2009/05/04 19:22:09
 guid: http://morgangoose.com/blog/?p=5
 permalink: http://morgangoose.com/blog/2009/05/fedora-10-on-the-eeepc-900/
 tags: fedora, woot, eeepc
+author: Morgan Goose
 title: Fedora 10 on the eeePC 900
 ---
 Recently got the woot.com deal on the eeepc 900, sans webcam. I tried to use the xanadros os that was bundled with it for a few days, but the lack of normal gnu tools and normal packages made me want to switch. So I decided to to look into putting my os of choice fedora onto it.

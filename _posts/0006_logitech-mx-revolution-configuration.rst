@@ -4,6 +4,7 @@ date: 2009/08/24 22:44:22
 guid: http://morgangoose.com/blog/2009/08/logitech-mx-revolution-configuration/
 permalink: http://morgangoose.com/blog/2009/08/logitech-mx-revolution-configuration/
 tags: btnx, logitech, button, firefox, gnome-terminal
+author: Morgan Goose
 title: Logitech MX Revolution configuration
 ---
 The other day `@shuckins <http://twitter.com/shuckins>`_ mentioned that

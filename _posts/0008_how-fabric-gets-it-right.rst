@@ -4,6 +4,7 @@ date: 2010/02/11 00:56:33
 guid: http://morgangoose.com/blog/?p=76
 permalink: http://morgangoose.com/blog/2010/02/how-fabric-gets-it-right/
 tags: python, fabric, pyohio, rst
+author: Morgan Goose
 title: How fabric gets it right
 ---
 

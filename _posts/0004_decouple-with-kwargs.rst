@@ -4,6 +4,7 @@ date: 2009/07/22 17:26:42
 guid: http://morgangoose.com/blog/?p=45
 permalink: http://morgangoose.com/blog/2009/07/decouple-with-kwargs/
 tags: python, kwargs, optparse, mutliprocessing
+author: Morgan Goose
 title: Decouple with kwargs
 ---
 So I've been attempting to make a suite of cli scripts for work. I recently discovered the multiprocessing_ module for python, and really liked its simplicity, and started using it, with great success. Everything was faster.

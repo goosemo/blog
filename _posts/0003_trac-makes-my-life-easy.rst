@@ -4,6 +4,7 @@ date: 2009/07/22 17:15:23
 guid: http://morgangoose.com/blog/?p=43
 permalink: http://morgangoose.com/blog/2009/07/trac-makes-my-life-easy/
 tags: apache, trac, bitten, python
+author: Morgan Goose
 title: Trac makes my life easy
 ---
 The project management app Trac_ is something that was new to me a while back. I'd just installed t for a side project, and used the yum install without any issues. It took care of all the grunt work, and got me to the point where I could now create and use a trac project.

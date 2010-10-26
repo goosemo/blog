@@ -1,4 +1,5 @@
 ---
+author: Morgan Goose
 title: Github and Bitbucket hooks
 date: 2010/09/29 17:40:10
 categories: Version Control

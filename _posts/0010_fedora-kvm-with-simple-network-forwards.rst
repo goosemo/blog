@@ -3,7 +3,8 @@ categories: Linux, Servers
 date: 2010/06/02 22:52:43
 guid: http://morgangoose.com/blog/2010/06/fedora-kvm-with-simple-netowrk-forward/
 permalink: http://morgangoose.com/blog/2010/06/fedora-kvm-with-simple-network-forwards/
-tags: ''
+tags: bash, iptables, fedora, kvm
+author: Morgan Goose
 title: Fedora KVM with simple network forwards
 ---
 Recently I've been teaching python to some high school students. It has been going well, but the development environment we had access to left a little bit to be desired. We were working with ages old solaris, vi only, and no real access to newer gnu (or other) tools. So a new setup was required, I went off to investigate.

@@ -3,7 +3,8 @@ categories: Linux
 date: 2010/05/29 11:57:56
 guid: http://morgangoose.com/blog/2010/05/fedora-with-awesome-window-manager/
 permalink: http://morgangoose.com/blog/2010/05/fedora-with-awesome-window-manager/
-tags: ''
+tags: fedora, awesome
+author: Morgan Goose
 title: Fedora with awesome window manager
 ---
 I have recently gotten into tiling window managers. Awesome being the one I've found I like to use the most. There are others and they all have their merits, I just settled on this one, and then got comfortable. I also am a bit of a mutt in what distro's I use. Work they put ubuntu on my box, home I have usually used fedora but now it's fedora on the desktop and arch on the laptop.

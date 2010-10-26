@@ -1,6 +1,7 @@
 ---
 categories: Programming, Website
 tags: python, static, web, programming
+author: Morgan Goose
 title: Switching to Blogofile
 date: 2010/09/28 13:03:00
 ---

@@ -94,9 +94,12 @@ blog.post_default_filters = {
 # My additions
 ######################################################################
 
-#### Similar Posts ####
+# Similar Posts
 blog.similar_posts.enabled = False
 blog.similar_posts.count = 3
+
+# Tag cloud
+blog.tags.enabled = False #broken
 
 # Google supplied stuff 
 # ----------------------
@@ -157,14 +160,20 @@ links = (
         ('Fabric', 'SSH made awesome by wrapping in Python',
             'http://docs.fabfile.org'),
 
-        ('OSU GCC', 'Game creation club at OSU',
+        ('GCC', 'Game creation club at OSU',
             'http://gamedev.osu.edu'),
 
-        ('OSU OSC', 'Open souce club at OSU',
+        ('OSC', 'Open souce club at OSU',
             'http://opensource.osu.edu'),
 
         ('al3k', 'Good blog from an OSC member',
             'http://al3k.net/'),
+
+        ('COPy', "Central Ohio's python group",
+            'http://www.meetup.com/Central-Ohio-Python-Users-Group/'),
+
+        ('Python DoJoe', 'Tuesday morning python meetup',
+            'https://pythondojoe.appspot.com'),
 
     )
 

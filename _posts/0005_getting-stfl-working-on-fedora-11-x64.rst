@@ -3,7 +3,8 @@ categories: Linux
 date: 2009/07/30 11:14:11
 guid: http://morgangoose.com/blog/2009/07/getting-stfl-working-on-fedora-11-x64/
 permalink: http://morgangoose.com/blog/2009/07/getting-stfl-working-on-fedora-11-x64/
-tags: ''
+tags: fedora, newsbeuter, cli, make
+author: Morgan Goose
 title: Getting stfl working on fedora 11 x64
 ---
 Newbeuter_ is my preferred way to browse RSS feeds. Its a great CLI app that is 'Mutt Of Feed Readers', and being a user of mutt_ I love this app for being so similar. I wanted to use the newest version of newbeuter, because recently I have been on a kick to get all of my apps: screen, vim, mutt, and now newsbuter; setup with 256 colours.

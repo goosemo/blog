@@ -4,6 +4,7 @@ date: 2009/05/07 14:05:16
 guid: http://morgangoose.com/blog/?p=15
 permalink: http://morgangoose.com/blog/2009/05/authenticating-svn-and-trac-with-wordpress/
 tags: server, apache, mysql, wordpress, svn, trac
+author: Morgan Goose
 title: Authenticating svn and trac with wordpress
 ---
 **Problem caused by wordpress upgrade**

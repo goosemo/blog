@@ -4,6 +4,7 @@ date: 2010/02/01 10:41:17
 guid: http://morgangoose.com/blog/2010/02/gnu-tools-presentation/
 permalink: http://morgangoose.com/blog/2010/02/gnu-tools-presentation/
 tags: find, gnu, awk, sed, osc, presentation
+author: Morgan Goose
 title: GNU tools presentation
 ---
 The other day, I gave a presentation to the Ohio State University, Open Source Club. It was on a smattering of command line utilities that I use on a daily basis, as well as a quick intro to regex usage.

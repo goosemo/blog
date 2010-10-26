@@ -1,4 +1,5 @@
 ---
+author: Morgan Goose
 title: Parallel execution with fabric
 date: 2010/10/08 19:00:15
 categories: Programming
@@ -37,7 +38,7 @@ Why not threads?
 Because they won't do what I want parallel execution in Fabric_ to accomplish.
 Namely
 
-* I can't be sure that the task is not IO bound as users can call anything
+* I can't be sure that the task is only IO bound as users can call anything
   as it 'just python', and the GIL will trip up fully parallel tasks.
 
 * With threads there is an issue noted in the docs about `importing in threaded 
