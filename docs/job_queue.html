@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>job_queue.py</title>
+  <link rel="stylesheet" href="pycco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  
+  <table cellspacing=0 cellpadding=0>
+  <thead>
+    <tr>
+      <th class=docs><h1>job_queue.py</h1></th>
+      <th class=code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id='section-0'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-0">#</a>
+        </div>
+        <p>This module provides a Job_queue class, and an example of use. One may drop in
+either multiprocessing Prcoesses or threading Threads, as I have show in the
+test suite.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-1'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-1">#</a>
+        </div>
+        <p>The goal of this class is to make a queue of processes to run, and go
+through them running X number at any given time.</p>
+<p>So if the bubble is 5 start with 5 running and move the bubble of running
+procs along the queue looking something like this:</p>
+<pre>Start
+...........................
+[~~~~~]....................
+___[~~~~~].................
+_________[~~~~~]...........
+__________________[~~~~~]..
+____________________[~~~~~]
+___________________________
+End
+</pre>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre><span class="k">class</span> <span class="nc">Job_Queue</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-2'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-2">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-3'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-3">#</a>
+        </div>
+        <p>Setup the class to resonable defaults.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">max_running</span><span class="p">):</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-4'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-4">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>        <span class="bp">self</span><span class="o">.</span><span class="n">_queued</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_running</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_completed</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_num_of_jobs</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_max</span> <span class="o">=</span> <span class="n">max_running</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_finished</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_closed</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_debug</span> <span class="o">=</span> <span class="bp">False</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-5'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-5">#</a>
+        </div>
+        <p>Simply states if all procs are alive or not. Needed to determine when
+to stop looping, and pop dead procs off and add live ones.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>    <span class="k">def</span> <span class="nf">_all_alive</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-6'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-6">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_running</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">all</span><span class="p">([</span><span class="n">x</span><span class="o">.</span><span class="n">is_alive</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_running</span><span class="p">])</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-7'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-7">#</a>
+        </div>
+        <p>Just going to use number of jobs as the Job_Queue length.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>    <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-8'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-8">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_of_jobs</span>
+    </pre></div></pre></div>
+      </td>
+    </tr><tr id='section-9'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-9">#</a>
+        </div>
+        <p>A sanity check, so that the need to care about new jobs being added in
+the last throws of the job_queue's run are negated.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-10'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-10">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_debug</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;job queue closed.&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_closed</span> <span class="o">=</span> <span class="bp">True</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-11'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-11">#</a>
+        </div>
+        <p>Add the Process() to the queue, so that later it can be checked up on.
+That is if the Job_Queue is still open.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">process</span><span class="p">):</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-12'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-12">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_closed</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_queued</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">process</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_num_of_jobs</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_debug</span><span class="p">:</span>
+                <span class="k">print</span><span class="p">(</span><span class="s">&quot;job queue appended </span><span class="si">%s</span><span class="s">.&quot;</span> <span class="o">%</span> <span class="n">process</span><span class="o">.</span><span class="n">name</span><span class="p">)</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-13'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-13">#</a>
+        </div>
+        <p>This is the workhorse. It will take the intial jobs from the _queue,
+start them, add them to _running, and then go into the main running
+loop.</p>
+<p>This loop will check for done procs, if found, move them out of
+_running into _completed. It also checks for a _running queue with open
+spots, which it will then fill as discovered.</p>
+<p>To end the loop, there have to be no running procs, and no more procs
+to be run in the queue.</p>
+<p>When all if finished, it will exit the loop, and disconnect_all()</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-14'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-14">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-15'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-15">#</a>
+        </div>
+        <p>Helper function to do the job of poping a new proc off the queue
+start it, then add it to the running queue. This will eventually
+depleate the _queue, which is a condition of stopping the running
+while loop.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>        <span class="k">def</span> <span class="nf">_advance_the_queue</span><span class="p">():</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-16'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-16">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>            <span class="n">job</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_queued</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="n">job</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_running</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">job</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_closed</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;Need to close() before starting.&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_debug</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;Job queue starting.&quot;</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;Job queue intial running queue fill.&quot;</span><span class="p">)</span>
+
+        <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_running</span><span class="p">)</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max</span><span class="p">:</span>
+            <span class="n">_advance_the_queue</span><span class="p">()</span>
+
+        <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_finished</span><span class="p">:</span>
+
+            <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_running</span><span class="p">)</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_queued</span><span class="p">:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_debug</span><span class="p">:</span>
+                    <span class="k">print</span><span class="p">(</span><span class="s">&quot;Job queue running queue filling.&quot;</span><span class="p">)</span>
+              
+                <span class="n">_advance_the_queue</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_all_alive</span><span class="p">():</span>
+                <span class="k">for</span> <span class="nb">id</span><span class="p">,</span> <span class="n">job</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_running</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">job</span><span class="o">.</span><span class="n">is_alive</span><span class="p">():</span>
+                        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_debug</span><span class="p">:</span>
+                            <span class="k">print</span><span class="p">(</span><span class="s">&quot;Job queue found finished proc: </span><span class="si">%s</span><span class="s">.&quot;</span> <span class="o">%</span>
+                                    <span class="n">job</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+                        <span class="n">done</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_running</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_completed</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">done</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_debug</span><span class="p">:</span>
+                    <span class="k">print</span><span class="p">(</span><span class="s">&quot;Job queue has </span><span class="si">%d</span><span class="s"> running.&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_running</span><span class="p">))</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_queued</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_running</span><span class="p">):</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_debug</span><span class="p">:</span>
+                    <span class="k">print</span><span class="p">(</span><span class="s">&quot;Job queue finished.&quot;</span><span class="p">)</span>
+
+                <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_completed</span><span class="p">:</span>
+                    <span class="n">job</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">_finished</span> <span class="o">=</span> <span class="bp">True</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-17'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-17">#</a>
+        </div>
+        <h3>Sample</h3>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-18'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-18">#</a>
+        </div>
+        <p>This will run the queue through it's paces, and show a simple way of using
+the job queue.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre><span class="k">def</span> <span class="nf">try_using</span><span class="p">(</span><span class="n">parallel_type</span><span class="p">):</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-19'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-19">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-20'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-20">#</a>
+        </div>
+        <p>Simple function to give a simple task to execute.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>    <span class="k">def</span> <span class="nf">print_number</span><span class="p">(</span><span class="n">number</span><span class="p">):</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-21'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-21">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>        <span class="k">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">parallel_type</span> <span class="o">==</span> <span class="s">&quot;multiprocessing&quot;</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span> <span class="k">as</span> <span class="n">Bucket</span>
+
+    <span class="k">elif</span> <span class="n">parallel_type</span> <span class="o">==</span> <span class="s">&quot;threading&quot;</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">threading</span> <span class="kn">import</span> <span class="n">Thread</span> <span class="k">as</span> <span class="n">Bucket</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-22'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-22">#</a>
+        </div>
+        <p>Make a job_queue with a bubble of len 5, and have it print verbosely</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>    <span class="n">jobs</span> <span class="o">=</span> <span class="n">Job_Queue</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">jobs</span><span class="o">.</span><span class="n">_debug</span> <span class="o">=</span> <span class="bp">True</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-23'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-23">#</a>
+        </div>
+        <p>Add 20 procs onto the stack</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
+        <span class="n">jobs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Bucket</span><span class="p">(</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="n">print_number</span><span class="p">,</span>
+            <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">],</span>
+            <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{},</span>
+            <span class="p">))</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-24'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-24">#</a>
+        </div>
+        <p>Close up the queue and then start it's execution</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>    <span class="n">jobs</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">jobs</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">try_using</span><span class="p">(</span><span class="s">&quot;multiprocessing&quot;</span><span class="p">)</span>
+    <span class="n">try_using</span><span class="p">(</span><span class="s">&quot;threading&quot;</span><span class="p">)</span>
+
+</pre></div></pre></div>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
