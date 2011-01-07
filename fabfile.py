@@ -8,7 +8,7 @@ def package():
     """
     with cd("_site/"):
         local(("tar zcvf ../blog.tgz blog css projects p images about "
-            "sitemap.xml blank.html "))
+            "docs sitemap.xml blank.html "))
 
 def new_post(post_name):
     """
@@ -60,7 +60,7 @@ def publish(post_name):
     post_format = "_posts/0000_%s.rst"
     post = post_format % "_".join(post_name.split(" "))
     local("sed -i -e's!%s!%s!' %s" % (old_post_date, post_date, post))
-    local("mv _posts/{0000,%s}_%s.rst" % (_get_next_post_number,
+    local("mv _posts/{0000,%s}_%s.rst" % (_get_next_post_number(),
         "_".join(post_name.split(" "))))
 
 def install():
