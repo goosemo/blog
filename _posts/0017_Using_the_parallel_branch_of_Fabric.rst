@@ -1,6 +1,7 @@
 ---
 title: Using the parallel branch of Fabric
 date: 2011/01/06 18:50:48
+update: 2011/01/07 09:20:00
 categories: Programming
 tags: python, fabric, multiprocessing, job_queue
 reddit: Python
@@ -9,12 +10,12 @@ reddit: Python
 Changes and Notes
 -----------------
 
-So I've updated the branch to have add in a useful bit for it's use. I also
-need to talk out a few things related to it's use in the environment and some 
-bugs or hiccups one might run into trying to use it. Hopefully I'll be hitting
-this up some more soon, and pulling some more of the crazy cool updates that
-people have been making to fabric trunk. I have a to-do list, let me know if you
-want me to add anything to it!
+So I've updated the branch to add in a useful bit for the parallel decorator. 
+I also need to talk out a few things related to it's use in the environment 
+and some bugs or hiccups one might run into trying to use it. Hopefully I'll 
+be hitting this up some more soon, and pulling some more of the crazy cool 
+updates that people have been making to fabric trunk. I have a to-do list, 
+let me know if you want me to add anything to it!
 
 Additional feature
 ==================
