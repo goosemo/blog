@@ -24,7 +24,7 @@ def new_post(post_name):
         "date: %(post_date)s",
         "draft: true",
         "---"])
-    
+
     post_date = "2000/01/01 00:00:01"
     post_format = "_posts/0000_%s.rst"
     post_filename = "_".join(post_name.split(" "))
@@ -40,6 +40,9 @@ def _get_next_post_number():
 
 
 def drafts():
+    """
+    Will list out posts that are still drafts
+    """
     for post in [x for x in os.listdir('_posts') if x.startswith("0000")]:
         print post
 
@@ -60,8 +63,9 @@ def publish(post_name):
     post_format = "_posts/0000_%s.rst"
     post = post_format % "_".join(post_name.split(" "))
     local("sed -i -e's!%s!%s!' %s" % (old_post_date, post_date, post))
-    local("mv _posts/{0000,%s}_%s.rst" % (_get_next_post_number(),
-        "_".join(post_name.split(" "))))
+    local("mv _posts/0000%(name)s.rst _post/%(post)s_%(name)s.rst" % {
+        'post':_get_next_post_number(),
+        'name':"_".join(post_name.split(" "))})
 
 def install():
     """
