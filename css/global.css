@@ -11,8 +11,8 @@ body{
 
 h1{
 	font-family: "Lucida Grande", Lucida, Verdana, sans-serif; 
-	font-size: 1.625em;
     margin-bottom: 10px;
+	font-size: 18px;
 }
 
 h3{
@@ -22,7 +22,7 @@ h3{
 }
 
 h1.blog_post_title {
-	font-size: 1.875em;
+	font-size: 1.625em;
     margin-bottom: 10px;
 }
 
@@ -33,10 +33,11 @@ h2, h3, h4, h5, h6{
     margin-bottom: 10px;
 }
 
-h2{
+div.post_prose h1, div.post_prose h2{
 	padding: 0px;
 /*	font-family: Georgia, "Times New Roman", Times, serif; */
-	font-size: 18px; font-weight: normal; margin-bottom: 10px;
+	font-weight: normal; margin-bottom: 10px;
+	font-size: 1.625em;
 }
 
 pre.padded{

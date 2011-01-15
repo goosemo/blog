@@ -1,7 +1,7 @@
 <%inherit file="site.mako" />
 % for post in posts:
   <%include file="post.mako" args="post=post" />
-% if bf.config.blog.disqus.enabled:
+    % if bf.config.blog.disqus.enabled:
     <div class="after_post">
         <div class="buttons float_right">
         % if hasattr(bf.config, "reddit"):
@@ -20,9 +20,10 @@
                 reddit_target="linux";
                 % endif
             </script>
-            <script type="text/javascript" 
+            <script type="text/javascript"
             src="http://reddit.com/static/button/button1.js">
             </script>
+
             % endif
         % endif
         </div>
@@ -32,7 +33,7 @@
      </div>
     <br />
     <br />
-% endif
+    % endif
   <hr class="interblog" />
   <br />
   <br />

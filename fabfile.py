@@ -8,7 +8,7 @@ def package():
     """
     with cd("_site/"):
         local(("tar zcvf ../blog.tgz blog css projects p images about "
-            "docs sitemap.xml blank.html "))
+            "js docs sitemap.xml blank.html "))
 
 def new_post(post_name):
     """

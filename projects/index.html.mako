@@ -1,3 +1,7 @@
+<% 
+    self.page_title="Projects" 
+    post.title="Projects" 
+%>
 <%inherit file="_templates/site.mako" />
 <div class="blog_post">
   <span class="post_prose">
