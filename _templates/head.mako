@@ -19,12 +19,12 @@
         <link rel="stylesheet" href="/css/table.css" type="text/css" charset="utf-8" />
 
         <meta name="google-site-verification" content="pRf9StJdchXEcYd_U9kBhwhHvh_47adRuIVkxEpzGL4" />
-        <script>
+        <script type="text/javascript">
         var head_conf = { screens: [640, 1024, 1280, 1680] };
         </script>
-        <script src="/js/head.js"></script>
+        <script type="text/javascript" src="/js/head.js"></script>
 
-        <script>
+        <script type="text/javascript">
         % if bf.config.tweets.enabled:
             head.js("/js/twitter.min.js")
         % endif
