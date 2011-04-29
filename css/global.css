@@ -10,34 +10,34 @@ body{
 }
 
 h1{
-	font-family: "Lucida Grande", Lucida, Verdana, sans-serif; 
     margin-bottom: 10px;
 	font-size: 18px;
 }
 
 h3{
-	font-family: "Lucida Grande", Lucida, Verdana, sans-serif; 
 	font-size: 0.750em;
     margin-bottom: 10px;
 }
 
 h1.blog_post_title {
-	font-size: 1.625em;
     margin-bottom: 10px;
+	font-size: 1.75em;
+    font-weight: 900;
+    font-family: Verdana, Geneva, sans-serif;
 }
 
 h2, h3, h4, h5, h6{
 	padding: 0px !important;
-/*	font-family: Georgia, "Times New Roman", Times, serif; */
     padding-top: 1em;
     margin-bottom: 10px;
 }
 
 div.post_prose h1, div.post_prose h2{
 	padding: 0px;
-/*	font-family: Georgia, "Times New Roman", Times, serif; */
-	font-weight: normal; margin-bottom: 10px;
-	font-size: 1.625em;
+    margin-bottom: 10px;
+	font-size: 1.425em;
+	font-weight: 600; 
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
 }
 
 pre.padded{
@@ -45,7 +45,8 @@ pre.padded{
 }
 
 p{
-	line-height: 20px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	line-height: 1.25em;
 	font-size: 1.0em;
 }
 
