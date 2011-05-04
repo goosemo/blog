@@ -91,6 +91,7 @@ def build():
 
     package()
     put("blog.tgz", "var/www/html/")
+    local("rm blog.tgz")
     with cd("var/www/html/"):
         run("tar zxvf blog.tgz")
 
