@@ -21,7 +21,7 @@
                 % endif
             </script>
             <script type="text/javascript"
-            src="http://reddit.com/static/button/button1.js">
+            src="/js/button1.js">
             </script>
 
             % endif
