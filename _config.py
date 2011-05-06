@@ -54,9 +54,9 @@ blog.disqus.name    = "magoo"
 ### Syntax highlighter ###
 # You can change the style to any builtin Pygments style
 # or, make your own: http://pygments.org/docs/styles
-#filters.syntax_highlight.style   = "fruity"
-#filters.syntax_highlight.css_dir = "/css"
-#filters.syntax_highlight.preload_styles = ["murphy","monokai","fruity"]
+blog.filters.syntax_highlight.style   = "fruity"
+blog.filters.syntax_highlight.css_dir = "/css"
+blog.filters.syntax_highlight.preload_styles = ["murphy","monokai","fruity"]
 
 #### Custom blog index ####
 # If you want to create your own index page at your blog root
