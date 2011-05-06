@@ -17,7 +17,7 @@
 site.url = "http://morgangoose.com"
 
 #### Blog Settings ####
-blog = controllers.blog
+blog = plugins.blog
 
 ## blog_enabled -- Should the blog be enabled?
 #  (You don't _have_ to use blogofile to build blogs)
@@ -54,9 +54,10 @@ blog.disqus.name    = "magoo"
 ### Syntax highlighter ###
 # You can change the style to any builtin Pygments style
 # or, make your own: http://pygments.org/docs/styles
-filters.syntax_highlight.style   = "fruity"
-filters.syntax_highlight.css_dir = "/css"
-filters.syntax_highlight.preload_styles = ["murphy","monokai","fruity"]
+#filters.syntax_highlight.style   = "fruity"
+#filters.syntax_highlight.css_dir = "/css"
+#filters.syntax_highlight.preload_styles = ["murphy","monokai","fruity"]
+
 #### Custom blog index ####
 # If you want to create your own index page at your blog root
 # turn this on. Otherwise blogofile assumes you want the
@@ -68,27 +69,6 @@ blog.custom_index = False
 #full post content turn this feature on
 post_excerpt_enabled     = True
 post_excerpt_word_length = 25
-#Also, if you don't like the way the post excerpt is generated
-#You can define a new function
-#below called post_excerpt(content, num_words)
-
-
-######################################################################
-# Advanced Settings
-######################################################################
-
-#### Default post filters ####
-# If a post does not specify a filter chain, use the 
-# following defaults based on the post file extension:
-blog.post_default_filters = {
-    "markdown": "syntax_highlight, markdown, paragraph_permalinks",
-    "textile": "syntax_highlight, textile, paragraph_permalinks",
-    "org": "syntax_highlight, org, paragraph_permalinks",
-    "rst": "syntax_highlight, rst", #, paragraph_permalinks",
-    "html": "syntax_highlight, paragraph_permalinks"
-}
-
-
 
 ######################################################################
 # My additions
@@ -99,50 +79,57 @@ blog.similar_posts.enabled = False
 blog.similar_posts.count = 3
 
 # Tag cloud
-blog.tags.enabled = False #broken
+#blog.tags.enabled = False #broken
+
+# Controler Enables
+controllers.tweets.enabled = True
+controllers.google.enabled = True
+controllers.github.enabled = True
+controllers.reddit.enabled = True
 
 # Google supplied stuff 
 # ----------------------
-controllers.google.enabled = True
-google = controllers.google
+if controllers.google.enabled:
+    google = controllers.google
 
-## Feedburner settings
-feedburner = google.feedburner
-feedburner.enabled = True
-feedburner.url = "http://feeds.feedburner.com/morgangoose/FCyR"
+    ## Feedburner settings
+    feedburner = google.feedburner
+    feedburner.enabled = True
+    feedburner.url = "http://feeds.feedburner.com/morgangoose/FCyR"
 
-## Adsense 
-adsense = google.adsense
-adsense.enabled = True
+    ## Adsense 
+    adsense = google.adsense
+    adsense.enabled = True
 
-## Google Analytics
-analytics = google.analytics
-analytics.enabled = True
-import password
-analytics.username = password.get_username()
-analytics.password = password.get_password()
-analytics.id = "UA-9907711-1"
-analytics.table_id = "ga:19940817"
-analytics.top_posts_number = 5
-analytics.app_name = "blogfile_top_posts"
-analytics.start_date = "2009-04-20"
+    ## Google Analytics
+    google.analytics.enabled = False
+    if google.analytics.enabled:
+        analytics = google.analytics
+        import password
+        analytics.username = password.get_username()
+        analytics.password = password.get_password()
+        analytics.id = "UA-9907711-1"
+        analytics.table_id = "ga:19940817"
+        analytics.top_posts_number = 5
+        analytics.app_name = "blogfile_top_posts"
+        analytics.start_date = "2009-04-20"
 
-### Top post count
-from datetime import date
-today = date.today()
-analytics.top_posts_enabled = True
-analytics.show_count = False
-analytics.end_date = today.strftime("%Y-%m-%d")
+        ### Top post count
+        from datetime import date
+        today = date.today()
+        analytics.top_posts_enabled = True
+        analytics.show_count = False
+        analytics.end_date = today.strftime("%Y-%m-%d")
 
 
 ## github projects
-controllers.github.enabled = True
-github = controllers.github
-github.user = "goosemo"
-github.link_watchers = True
-github.link_forks = True
-github.link_issues = True
-github.link_rss_feed = False
+if controllers.github.enabled:
+    github = controllers.github
+    github.user = "goosemo"
+    github.link_watchers = True
+    github.link_forks = True
+    github.link_issues = True
+    github.link_rss_feed = False
 
 ## menu
 menu = {
@@ -182,20 +169,20 @@ blog.latest_post_count = 8
 blog.posts_per_page = 2
 
 ## Twitter Settings
-controllers.tweets.enabled = True
-tweets = controllers.tweets
-tweets.username = "morganiangoose"
-tweets.count = 5
-tweets.enable_links = 'true'
-tweets.ignore_replies = 'false'
-tweets.template = ('<li class="item">%text% <a href="http://twitter.c'
-         'om/%user_screen_name%/statuses/%id%/">%time%</a></li>')
+if controllers.tweets.enabled:
+    tweets = controllers.tweets
+    tweets.username = "morganiangoose"
+    tweets.count = 5
+    tweets.enable_links = 'true'
+    tweets.ignore_replies = 'false'
+    tweets.template = ('<li class="item">%text% <a href="http://twitter.c'
+            'om/%user_screen_name%/statuses/%id%/">%time%</a></li>')
 
 
 ## Reddit button
-controllers.reddit.enabled = True
-reddit = controllers.reddit
-reddit.button = True
+if controllers.reddit.enabled:
+    reddit = controllers.reddit
+    reddit.button = True
 
 ### Pre/Post build hooks:
 def pre_build():

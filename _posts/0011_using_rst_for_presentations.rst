@@ -121,9 +121,9 @@ bit I found that pygments, a code highlighter in python, already had some
 docutils hooks that they `mention on their site 
 <http://pygments.org/docs/rstdirective/>`_.
 
-Using that as a stepping stone I added in code, code-block, and source code,
+Using that as a stepping stone I added in code, code, and source code,
 directives to use pygments for the code they contained. In my presentations
-though I made sure to only use code-block because this is the directive that
+though I made sure to only use code because this is the directive that
 rst2pdf is expecting when it goes to format the document.
 
 After that my code goes through the ringer as shown in the post_ I gave
@@ -147,7 +147,7 @@ the final rst-directive.py looks like this though:
         registers a ``sourcecode`` directive that you can use instead of
         normal code blocks like this::
     
-            .. sourcecode:: python
+            .. sourcecode-block:: python
     
                 My code goes here.
     
@@ -156,7 +156,7 @@ the final rst-directive.py looks like this though:
         below.  You can invoke them instead of the DEFAULT one by using a
         directive option::
     
-            .. sourcecode:: python
+            .. sourcecode-block:: python
                 :linenos:
     
                 My code goes here.
@@ -219,7 +219,7 @@ the final rst-directive.py looks like this though:
             return [nodes.raw('', parsed, format='html')]
 
     directives.register_directive('sourcecode', Pygments)
-    directives.register_directive('code-block', Pygments)
+    directives.register_directive('code', Pygments)
     directives.register_directive('code', Pygments)
 
     from docutils.core import publish_cmdline, default_description

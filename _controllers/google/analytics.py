@@ -67,14 +67,14 @@ class DataFeedDemo(object):
     def PrintFeedDetails(self):
         """Prints important Analytics related data found at the top of the feed."""
 
-        print '\n-------- Feed Data --------'
-        print 'Feed Title          = ' + self.feed.title.text
-        print 'Feed Id             = ' + self.feed.id.text
-        print 'Total Results Found = ' + self.feed.total_results.text
-        print 'Start Index         = ' + self.feed.start_index.text
-        print 'Results Returned    = ' + self.feed.items_per_page.text
-        print 'Start Date          = ' + self.feed.start_date.text
-        print 'End Date            = ' + self.feed.end_date.text
+        print('\n-------- Feed Data --------')
+        print('Feed Title          = ' + self.feed.title.text)
+        print('Feed Id             = ' + self.feed.id.text)
+        print('Total Results Found = ' + self.feed.total_results.text)
+        print('Start Index         = ' + self.feed.start_index.text)
+        print('Results Returned    = ' + self.feed.items_per_page.text)
+        print('Start Date          = ' + self.feed.start_date.text)
+        print('End Date            = ' + self.feed.end_date.text)
     
     def PrintDataSources(self):
         """Prints data found in the data source elements.
@@ -86,12 +86,12 @@ class DataFeedDemo(object):
 
         data_source = self.feed.data_source[0]
 
-        print '\n-------- Data Source Data --------'
-        print 'Table ID        = ' + data_source.table_id.text
-        print 'Table Name      = ' + data_source.table_name.text
-        print 'Web Property Id = ' + data_source.GetProperty('ga:webPropertyId').value
-        print 'Profile Id      = ' + data_source.GetProperty('ga:profileId').value
-        print 'Account Name    = ' + data_source.GetProperty('ga:accountName').value
+        print('\n-------- Data Source Data --------')
+        print('Table ID        = ' + data_source.table_id.text)
+        print('Table Name      = ' + data_source.table_name.text)
+        print('Web Property Id = ' + data_source.GetProperty('ga:webPropertyId').value)
+        print('Profile Id      = ' + data_source.GetProperty('ga:profileId').value)
+        print('Account Name    = ' + data_source.GetProperty('ga:accountName').value)
     
     def PrintFeedAggregates(self):
         """Prints data found in the aggregates elements.
@@ -103,58 +103,58 @@ class DataFeedDemo(object):
     
         aggregates = self.feed.aggregates
     
-        print '\n-------- Metric Aggregates --------'
+        print('\n-------- Metric Aggregates --------')
         for met in aggregates.metric:
-            print ''
-            print 'Metric Name  = ' + met.name
-            print 'Metric Value = ' + met.value
-            print 'Metric Type  = ' + met.type
-            print 'Metric CI    = ' + met.confidence_interval
+            print('')
+            print('Metric Name  = ' + met.name)
+            print('Metric Value = ' + met.value)
+            print('Metric Type  = ' + met.type)
+            print('Metric CI    = ' + met.confidence_interval)
 
     def PrintSegmentInfo(self):
         """Prints segment information if the query has advanced segments
         defined."""
     
         if self.feed.segment:
-            print '-------- Advanced Segments Information --------'
+            print('-------- Advanced Segments Information --------')
             for segment in self.feed.segment:
-                print 'Segment Name       = ' + segment.name
-                print 'Segment Id         = ' + segment.id
-                print 'Segment Definition = ' + segment.definition.value
+                print('Segment Name       = ' + segment.name)
+                print('Segment Id         = ' + segment.id)
+                print('Segment Definition = ' + segment.definition.value)
 
     def PrintOneEntry(self):
         """Prints all the important Google Analytics data found in an entry"""
         
-        print '\n-------- One Entry --------'
+        print('\n-------- One Entry --------')
         if len(self.feed.entry) == 0:
-            print 'No entries found'
+            print('No entries found')
             return
 
         entry = self.feed.entry[0]
-        print 'ID      = ' + entry.id.text
+        print('ID      = ' + entry.id.text)
         
         for dim in entry.dimension:
-            print 'Dimension Name  = ' + dim.name
-            print 'Dimension Value = ' + dim.value
+            print('Dimension Name  = ' + dim.name)
+            print('Dimension Value = ' + dim.value)
 
         for met in entry.metric:
-            print 'Metric Name     = ' + met.name
-            print 'Metric Value    = ' + met.value
-            print 'Metric Type     = ' + met.type
-            print 'Metric CI       = ' + met.confidence_interval
+            print('Metric Name     = ' + met.name)
+            print('Metric Value    = ' + met.value)
+            print('Metric Type     = ' + met.type)
+            print('Metric CI       = ' + met.confidence_interval)
 
     def PrintFeedTable(self):
         """Prints all the entries as a table."""
         
-        print '\n-------- All Entries In a Table --------'
+        print('\n-------- All Entries In a Table --------')
         for entry in self.feed.entry:
             for dim in entry.dimension:
-                print ('Dimension Name = %s \t Dimension Value = %s'
-                    % (dim.name, dim.value))
+                print(('Dimension Name = %s \t Dimension Value = %s'
+                    % (dim.name, dim.value)))
             for met in entry.metric:
-                print ('Metric Name    = %s \t Metric Value    = %s'
-                    % (met.name, met.value))
-            print '---'
+                print(('Metric Name    = %s \t Metric Value    = %s'
+                    % (met.name, met.value)))
+            print('---')
 
     def top_posts(self):
         top = []

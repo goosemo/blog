@@ -68,7 +68,7 @@ had pushes to, and then push to the other:
 Note that the quiet flags or similar must be employed, otherwise you'll get
 caught in an infinite loop. After that I added this line into my ~/.hgrc
 
-.. code:: ini
+.. code-block:: ini
 
     [hooks]
     post-push = $HOME/workspace/hooks/github.sh
@@ -79,7 +79,7 @@ Success
 
 Now regardless of where I push the other will get the update:
 
-.. code:: bash
+.. code-block:: bash
 
     ~/workspace/hooks$ hg push bitbucket
     pushing to ssh://hg@bitbucket.org/morgan_goose/hooks

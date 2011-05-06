@@ -4,6 +4,7 @@ _site
 *.bak
 *.swp
 *.tgz
+*.rste
 *pip-log.txt
 password.py
 

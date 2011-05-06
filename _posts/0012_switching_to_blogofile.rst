@@ -40,7 +40,7 @@ get these posts into rst form.
 After some hand editing
 -----------------------
 
-I go to publish the site, and it's not liking my code-block directives. I use
+I go to publish the site, and it's not liking my code directives. I use
 these in other presentations and forgot that I'd made some changes to use the
 directive, which I go into more depth about in a previous post_, but needed to
 now retrofit into this project.
@@ -112,7 +112,7 @@ rst_template.py changes
 
     def run(content):
         directives.register_directive('sourcecode', Pygments)
-        directives.register_directive('code-block', Pygments)
+        directives.register_directive('code', Pygments)
         directives.register_directive('code', Pygments)
 
         description = ('Generates S5 (X)HTML slideshow documents from standalone '

@@ -4,7 +4,7 @@ from blogofile.cache import bf
 github = bf.config.controllers.github
 
 from github2.client import Github
-github_api = Github()
+github_api = Github(debug=False)
 
 config = {
     "name": "Github",

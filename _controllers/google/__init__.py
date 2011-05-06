@@ -1,7 +1,5 @@
 import logging
-import adsense
-import analytics
-import feedburner
+from . import adsense, feedburner
 
 from blogofile.cache import bf
 google = bf.config.controllers.google
@@ -15,7 +13,10 @@ config = {
 
 def run():
     google.logger = logging.getLogger(config['name'])
+
     adsense.run()
-    analytics.run()
+    if google.analytics.enabled:
+        from . import analytics
+        analytics.run()
     feedburner.run()
 

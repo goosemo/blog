@@ -6,7 +6,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         ${self.head()}
     </head>
-    
+
     <body>
     <div class="content_centered">
         ${self.header()}

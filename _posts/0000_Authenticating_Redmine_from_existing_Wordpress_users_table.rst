@@ -52,7 +52,7 @@ one can have a preexisting user list to auth from, but I don't use LDAP. So
 really beyond that, there isn't any plugin (that works well) that I can use.
 
 There are a number of plugins and scripts to actually get apache to auth from
-the Remine_ tables, which would have been nice too if I'd started with it for
+the Redmine_ tables, which would have been nice too if I'd started with it for
 the site. But the blog came first, and all other apps later.
 
 
@@ -78,4 +78,9 @@ p phpass.check('test12346', known) # => false
 .. _alternative custom authentication: http://www.redmine.org/projects/redmine/wiki/Alternativecustom_authentication_HowTo
 .. _bug from ruby version change: http://www.redmine.org/issues/6196
 .. _wordpress: http://wordpress.com
+.. _bbPress: http://bbpress.org/
 .. _Redmine: http://www.redmine.org/
+.. _SVN: http://subversion.tigris.org/
+.. _Trac: http://trac.edgewall.org/
+.. _Fabric: http://docs.fabfile.org
+.. _Ruby: http://ruby-lang.org/

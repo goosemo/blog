@@ -6,7 +6,7 @@ def package():
     """
     Take the hardcoded list of files, and make tarball
     """
-    with cd("_site/"):
+    with lcd("_site/"):
         local(("tar zcvf ../blog.tgz blog css projects p images about "
             "js docs sitemap.xml blank.html "))
 
@@ -73,12 +73,27 @@ def install():
     """
     local("sudo pip install -r requirements.txt")
 
-def test():
+def test_local():
     """
     Build blog, and run locally on port 9000
     """
     local("blogofile build")
     local("blogofile serve 9000")
+
+@hosts('h4941w83@morgangoose.com')
+def test():
+    """
+    Build, make sitemap, package, deploy.
+    """
+    local("export WORKON_HOME=$HOME/.virtualenvs; source /usr/bin/virtualenvwrapper.sh; workon blog; blogofile build")
+    local(("python _extensions/sitemap_gen/sitemap_gen.py "
+        "--config=_extensions/sitemap_gen/config.xml"))
+
+    package()
+    put("blog.tgz", "var/www/html/test/")
+    local("rm blog.tgz")
+    with cd("var/www/html/test/"):
+        run("tar zxvf blog.tgz")
 
 @hosts('h4941w83@morgangoose.com')
 def build():

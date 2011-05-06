@@ -65,5 +65,3 @@ end = start + bf.config.blog.latest_post_count
 <%include file="adsense.mako" />
 % endif
 
-<%include file="tags.mako" />
-
