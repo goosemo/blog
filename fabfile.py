@@ -8,7 +8,7 @@ def package():
     """
     with lcd("_site/"):
         local(("tar zcvf ../blog.tgz blog css projects p images about "
-            "js docs sitemap.xml blank.html "))
+            "posts js docs sitemap.xml blank.html "))
 
 def new_post(post_name):
     """
@@ -100,7 +100,7 @@ def build():
     """
     Build, make sitemap, package, deploy.
     """
-    local("blogofile build")
+    local("export WORKON_HOME=$HOME/.virtualenvs; source /usr/bin/virtualenvwrapper.sh; workon blog; blogofile build")
     local(("python _extensions/sitemap_gen/sitemap_gen.py "
         "--config=_extensions/sitemap_gen/config.xml"))
 

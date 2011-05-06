@@ -135,6 +135,7 @@ if controllers.github.enabled:
 menu = {
         'home': '/blog',
         'about': '/about',
+        'posts': '/posts',
         'projects': '/projects',
         'presentations': '/p',
     }
