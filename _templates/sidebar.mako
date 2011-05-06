@@ -5,7 +5,7 @@ end = start + bf.config.blog.latest_post_count
 <div class="sidebar_item">
 <h3>Latest ${end-start} Posts</h3>
 <ul class="sidebar_menu">
-% for post in bf.config.blog.posts[start:end]:
+% for post in list(bf.config.blog.iter_posts_published())[start:end]:
     <li class="item">
         <a href="${post.path}">${post.title}</a>
     </li>
