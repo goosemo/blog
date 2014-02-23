@@ -17,7 +17,7 @@
 site.url = "http://morgangoose.com"
 
 #### Blog Settings ####
-blog = plugins.blog
+blog = controllers.blog
 
 ## blog_enabled -- Should the blog be enabled?
 #  (You don't _have_ to use blogofile to build blogs)
@@ -56,7 +56,7 @@ blog.disqus.name    = "magoo"
 # or, make your own: http://pygments.org/docs/styles
 blog.filters.syntax_highlight.style   = "fruity"
 blog.filters.syntax_highlight.css_dir = "/css"
-blog.filters.syntax_highlight.preload_styles = ["murphy","monokai","fruity"]
+blog.filters.syntax_highlight.preload_styles = ["fruity"]
 
 #### Custom blog index ####
 # If you want to create your own index page at your blog root

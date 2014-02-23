@@ -1,3 +1,23 @@
-#-e git+https://github.com/EnigmaCurry/blogofile.git#egg=Package
--e git+https://github.com/goosemo/python-github2.git#egg=Package
-http://gdata-python-client.googlecode.com/files/gdata-2.0.12.tar.gz
+BeautifulSoup==3.2.1
+Blogofile==0.7.1
+Mako==0.9.1
+Markdown==2.4
+MarkupSafe==0.18
+PyYAML==3.10
+Pygments==1.6
+argparse==1.2.1
+cssselect==0.9.1
+docutils==0.11
+gdata==2.0.12
+github2==0.6.2
+github3.py==0.8.2
+httplib2==0.8
+lxml==3.3.1
+pyquery==1.2.8
+python-dateutil==2.2
+pytz==2013.9
+requests==2.2.1
+six==1.5.2
+textile==2.1.5
+uritemplate.py==0.3.0
+wsgiref==0.1.2

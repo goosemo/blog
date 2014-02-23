@@ -22,28 +22,28 @@
 <%
     github = bf.config.controllers.github
 %>
-    % for project in github.full_repo_list:
+    % for repo in github.full_repo_list:
     <tr>
-        <td><a href="${project.url}" title="${project.name}">
-        ${project.name}</a></td>
-        <td>${project.description}</td>
+        <td><a href="${repo.html_url}" title="${repo.name}">
+        ${repo.name}</a></td>
+        <td>${repo.description}</td>
         
         % if github.link_watchers:
-        <td><a href="${project.url}/watchers">${project.watchers - 1}</a></td>
+        <td><a href="${repo.html_url}/watchers">${repo.watchers - 1}</a></td>
         % else:
-        <td>${project.watchers - 1}</td>
+        <td>${repo.watchers - 1}</td>
         % endif
         
         % if github.link_forks:
-        <td><a href="${project.url}/network">${project.forks}</a></td>
+        <td><a href="${repo.html_url}/network">${repo.forks}</a></td>
         % else:
-        <td>${project.forks}</td>
+        <td>${repo.forks}</td>
         % endif
         
         % if github.link_issues:
-        <td><a href="${project.url}/issues">${project.open_issues}</a></td>
+        <td><a href="${repo.html_url}/issues">${repo.open_issues}</a></td>
         % else:
-        <td>${project.open_issues}</td>
+        <td>${repo.open_issues}</td>
         % endif
     </tr>
     % endfor

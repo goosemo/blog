@@ -17,7 +17,7 @@
     </tr>
     </thead>
     <tbody>
-    % for post in bf.config.blog.iter_posts_published():
+    % for post in bf.config.blog.posts:
     <tr>
         <td><a href="${post.path}" title="${post.title}">${post.title}</a></td>
         <td>${post.date.strftime("%m/%d/%Y")}</td>

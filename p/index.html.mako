@@ -1,10 +1,10 @@
 <%inherit file="_templates/site.mako" />
 <%
 import json
-import urllib.request
+import urllib
 
 url = "http://morgangoose.com/p/presentations.json"
-presentation_request = urllib.request.urlopen(url).readall()
+presentation_request = urllib.urlopen(url).read()
 presentations = json.loads(presentation_request.decode())
 
 %>

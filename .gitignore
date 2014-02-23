@@ -1,0 +1,9 @@
+syntax:glob
+_site
+*.pyc
+*.bak
+*.swp
+*.tgz
+*pip-log.txt
+password.py
+

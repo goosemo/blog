@@ -3,8 +3,7 @@ import logging
 from blogofile.cache import bf
 github = bf.config.controllers.github
 
-from github2.client import Github
-github_api = Github(debug=False)
+from github3 import gh as github_api
 
 config = {
     "name": "Github",
@@ -18,10 +17,10 @@ def get_list(user):
         name, url, description, forks, watchers, homepage, open_issues
 
     """
-    return [g for g in github_api.repos.list(user) if not g.fork]
+    return [g for g in github_api.iter_user_repos(user) if not g.fork]
 
 
 def run():
     github.logger = logging.getLogger(config['name'])
     github.repo_list = get_list(github.user)
-    github.full_repo_list = github_api.repos.list(github.user)
+    github.full_repo_list = github_api.iter_user_repos(github.user)
