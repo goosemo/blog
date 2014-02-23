@@ -1,6 +1,7 @@
 import os 
 
 from fabric.api import *
+env.use_ssh_config = True
 
 def package():
     """
@@ -85,7 +86,7 @@ def test():
     """
     Build, make sitemap, package, deploy.
     """
-    local("export WORKON_HOME=$HOME/.virtualenvs; source /usr/bin/virtualenvwrapper.sh; workon blog; blogofile build")
+    local("export WORKON_HOME=$HOME/.virtualenvs; source /usr/bin/virtualenvwrapper.sh; workon blogofile; blogofile build")
     local(("python _extensions/sitemap_gen/sitemap_gen.py "
         "--config=_extensions/sitemap_gen/config.xml"))
 
@@ -100,7 +101,7 @@ def build():
     """
     Build, make sitemap, package, deploy.
     """
-    local("export WORKON_HOME=$HOME/.virtualenvs; source /usr/bin/virtualenvwrapper.sh; workon blog; blogofile build")
+    local("export WORKON_HOME=$HOME/.virtualenvs; source /usr/bin/virtualenvwrapper.sh; workon blogofile; blogofile build")
     local(("python _extensions/sitemap_gen/sitemap_gen.py "
         "--config=_extensions/sitemap_gen/config.xml"))
 

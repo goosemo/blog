@@ -6,11 +6,21 @@
         <title>${bf.config.blog.name}</title>
     % endif
 
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
         <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="${bf.util.site_path_helper(bf.config.blog.path,'/feed')}" />
         <link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="${bf.util.site_path_helper(bf.config.blog.path,'/feed/atom')}" />
         <link rel='stylesheet' href='${bf.config.blog.filters.syntax_highlight.css_dir}/pygments_${bf.config.blog.filters.syntax_highlight.style}.css' type='text/css' />
         <link rel="stylesheet" href="/css/global.css" type="text/css" charset="utf-8" />
         <link rel="stylesheet" href="/css/table.css" type="text/css" charset="utf-8" />
+
 
         <meta name="google-site-verification" content="pRf9StJdchXEcYd_U9kBhwhHvh_47adRuIVkxEpzGL4" />
         <script type="text/javascript">

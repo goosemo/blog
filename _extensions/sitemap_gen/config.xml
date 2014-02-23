@@ -33,12 +33,12 @@
 -->
 <site
     base_url="http://morgangoose.com/"
-    store_into="/home/goose/workspace/blog/_site/sitemap.xml"
+    store_into="./_site/sitemap.xml"
     verbose="1"
   >
 
   <directory
-      path="/home/goose/workspace/blog/_site/"
+      path="./_site/"
       url="http://morgangoose.com/"
       default_file="index.html"
       />
