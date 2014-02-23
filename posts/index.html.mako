@@ -21,7 +21,7 @@
     <tr>
         <td><a href="${post.path}" title="${post.title}">${post.title}</a></td>
         <td>${post.date.strftime("%m/%d/%Y")}</td>
-        <td>${post.categories}</td>
+        <td>${[p for p in post.categories]}</td>
         % if False:
         <td>${post.hit_count}</td>
         % else:
