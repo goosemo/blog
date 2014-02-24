@@ -86,6 +86,7 @@ controllers.tweets.enabled = True
 controllers.google.enabled = True
 controllers.github.enabled = True
 controllers.reddit.enabled = True
+controllers.stackoverflow.enabled = True
 
 # Google supplied stuff 
 # ----------------------
@@ -131,6 +132,29 @@ if controllers.github.enabled:
     github.link_issues = True
     github.link_rss_feed = False
 
+## stackoverflow config
+if controllers.stackoverflow.enabled:
+    stackoverflow = """ 
+<a href="http://stackexchange.com/users/70175/morgan"><img src="http://stackexchange.com/users/flair/70175.png" width="208" height="58" alt="profile for Morgan on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for Morgan on Stack Exchange, a network of free, community-driven Q&amp;A sites" /></a>
+"""
+
+## Twitter Settings
+if controllers.tweets.enabled:
+    tweets = controllers.tweets
+    tweets.username = "morganiangoose"
+    tweets.count = 5
+    tweets.enable_links = 'true'
+    tweets.ignore_replies = 'false'
+    tweets.template = ('<li class="item">%text% <a href="http://twitter.c'
+            'om/%user_screen_name%/statuses/%id%/">%time%</a></li>')
+
+
+## Reddit button
+if controllers.reddit.enabled:
+    reddit = controllers.reddit
+    reddit.button = True
+
+
 ## menu
 menu = {
         'home': '/blog',
@@ -169,21 +193,6 @@ links = (
 blog.latest_post_count = 8
 blog.posts_per_page = 2
 
-## Twitter Settings
-if controllers.tweets.enabled:
-    tweets = controllers.tweets
-    tweets.username = "morganiangoose"
-    tweets.count = 5
-    tweets.enable_links = 'true'
-    tweets.ignore_replies = 'false'
-    tweets.template = ('<li class="item">%text% <a href="http://twitter.c'
-            'om/%user_screen_name%/statuses/%id%/">%time%</a></li>')
-
-
-## Reddit button
-if controllers.reddit.enabled:
-    reddit = controllers.reddit
-    reddit.button = True
 
 ### Pre/Post build hooks:
 def pre_build():
