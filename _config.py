@@ -103,7 +103,7 @@ if controllers.google.enabled:
     adsense.enabled = True
 
     ## Google Analytics
-    google.analytics.enabled = False
+    google.analytics.enabled = True
     if google.analytics.enabled:
         analytics = google.analytics
         import password
