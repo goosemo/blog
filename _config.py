@@ -33,14 +33,14 @@ blog.path = "/blog"
 
 ## blog_name -- Your Blog's name.
 # This is used repeatedly in default blog templates
-blog.name = "Magoo"
+blog.name = "MorganGoose.com"
 
 ## blog_description -- A short one line description of the blog
 # used in the RSS/Atom feeds.
-blog.description = "affiliated with the society of blog bloggables"
+blog.description = "notes about various technical subjects"
 
 ## blog_timezone -- the timezone that you normally write your blog posts from
-blog.timezone = "US/Eastern"
+blog.timezone = "US/Pacific"
 
 
 ######################################################################
@@ -166,8 +166,6 @@ menu = {
 
 ## links
 links = (
-        ('Alfred', 'Smart friend of mine', 
-            'http://www.alfredrossi.com/'),
 
         ('Fabric', 'SSH made awesome by wrapping in Python',
             'http://docs.fabfile.org'),
@@ -178,14 +176,8 @@ links = (
         ('OSC', 'Open souce club at OSU',
             'http://opensource.osu.edu'),
 
-        ('al3k', 'Good blog from an OSC member',
-            'http://al3k.net/'),
-
         ('COPy', "Central Ohio's python group",
             'http://www.meetup.com/Central-Ohio-Python-Users-Group/'),
-
-        ('Python DoJoe', 'Tuesday morning python meetup',
-            'https://pythondojoe.appspot.com'),
 
     )
 
