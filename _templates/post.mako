@@ -12,7 +12,7 @@
            category_links.append("<a href='%s'>%s</a>" % (category.path, category.name))
 
     if bf.config.blog.disqus.enabled:
-        comments_tag = ' | <a href="${post.permalink}#disqus_thread">View Comments</a>'
+        comments_tag = ' | <a href="%s#disqus_thread">View Comments</a>' % post.path
 %>
   <a name="${post_anchor}" />
   <h1 class="blog_post_title"><a href="${post.permapath()}" rel="bookmark" title="Permanent Link to ${post.title}">${post.title}</a></h1>

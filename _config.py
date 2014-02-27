@@ -42,6 +42,11 @@ blog.description = "notes about various technical subjects"
 ## blog_timezone -- the timezone that you normally write your blog posts from
 blog.timezone = "US/Pacific"
 
+## blog_permalinks ##
+
+blog.auto_permalink.enabled
+blog.auto_permalink.path = ":blog_path/:year/:month/:day/:title"
+
 
 ######################################################################
 # Intermediate Settings
