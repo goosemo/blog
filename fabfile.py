@@ -8,7 +8,7 @@ def package():
     Take the hardcoded list of files, and make tarball
     """
     with lcd("_site/"):
-        local(("tar zcvf ../blog.tgz blog css projects p images about "
+        local(("tar zcf ../blog.tgz blog css projects p images about "
             "posts js docs sitemap.xml blank.html "))
 
 def new_post(post_name):
@@ -94,7 +94,7 @@ def test():
     put("blog.tgz", "var/www/html/test/")
     local("rm blog.tgz")
     with cd("var/www/html/test/"):
-        run("tar zxvf blog.tgz")
+        run("tar zxf blog.tgz")
 
 @hosts('h4941w83@morgangoose.com')
 def build():
@@ -109,6 +109,6 @@ def build():
     put("blog.tgz", "var/www/html/")
     local("rm blog.tgz")
     with cd("var/www/html/"):
-        run("tar zxvf blog.tgz")
+        run("tar zxf blog.tgz")
 
 
