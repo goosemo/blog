@@ -29,7 +29,7 @@
         <td>${repo.description}</td>
         
         % if github.link_watchers:
-        <td><a href="${repo.html_url}/watchers">${repo.watchers - 1}</a></td>
+        <td><a href="${repo.html_url}/watchers">${repo.watchers}</a></td>
         % else:
         <td>${repo.watchers - 1}</td>
         % endif
